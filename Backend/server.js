@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 require("dotenv").config();
 
-const PORT = process.env.PORT || 8070;
+const PORT = process.env.PORT || 8085;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -25,9 +25,9 @@ connection.once('open', () => {
   console.log("Mongodb Connection success!");
 })
 
-const paymentRouter = require("./routes/PaymentManagement/payment.js");
+const paymentRouter = require("../Backend/routes/paymentManagement/payment");
 
-app.use("/Backend/models/Payment.js",paymentRouter);
+app.use("/Payment",paymentRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is up and running on port number: ${PORT}`)
