@@ -3,6 +3,7 @@ import Cards from 'react-credit-cards';
 import './CreditCard.scss';
 import './CardStyles.css';
 
+
 export default class PaymentForm extends React.Component {
   state = {
     cvc: '',
@@ -21,6 +22,8 @@ export default class PaymentForm extends React.Component {
     
     this.setState({ [name]: value });
   }
+
+  
   
   render() {
     return (
@@ -92,12 +95,16 @@ export default class PaymentForm extends React.Component {
             <div className="form-actions">
               <div className="button1">
               <button className="btn btn-primary btn-lg col-sm-4">PAY</button>
+              
               </div>
+              
             </div>
             
           </form>
         </div>
+        
       </div>
+      
     )
   }
 }

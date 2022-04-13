@@ -2,7 +2,7 @@ import React from "react";
 
 const NavBar = () => {
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <button
           class="navbar-toggler"
@@ -20,7 +20,7 @@ const NavBar = () => {
           <a class="navbar-brand mt-2 mt-lg-0" href="#">
             <img
               src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
-              height="15"
+              height="50"
               alt="MDB Logo"
               loading="lazy"
             />
@@ -98,7 +98,7 @@ const NavBar = () => {
               <img
                 src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
                 class="rounded-circle"
-                height="25"
+                height="50"
                 alt="Black and White Portrait of a Man"
                 loading="lazy"
               />
