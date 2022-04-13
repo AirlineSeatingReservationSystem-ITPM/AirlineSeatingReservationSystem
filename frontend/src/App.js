@@ -10,7 +10,7 @@ function App() {
       <Router>
         <NavBar />
         <Routes>
-          <Route path="/card" element={<CreditCard />} />
+          <Route path="/" element={<CreditCard />} />
         </Routes>
         <Footer/>
       </Router>
