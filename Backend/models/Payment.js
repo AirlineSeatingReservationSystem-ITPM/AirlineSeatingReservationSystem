@@ -4,16 +4,20 @@ const Schema = mongoose.Schema;
 
 const PaymentSchema = new Schema({
 
-    name :{
+    number :{
         type : String,
         required : true
     },
 
-    date:{
+    name:{
         type: String,
         required: true
     },
-    price :{
+    expiry :{
+        type: String,
+        required: true
+    },
+    cvc :{
         type: String,
         required: true
     }
