@@ -60,7 +60,7 @@ function App() {
          <Route path="/edit-userM" element={<UserList />} /> 
         
         </Routes>
-        <Footer/>
+        {/* <Footer/> */}
       </Router> 
 
       <Router>
