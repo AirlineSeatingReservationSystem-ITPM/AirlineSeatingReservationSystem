@@ -8,7 +8,7 @@ require("dotenv").config();
 const PORT = process.env.PORT || 8085;
 
 app.use(cors());
-app.use(bodyParser.json());
+app.use(express.json());
 
 const URL = process.env.MONGODB_URL;
 
@@ -32,3 +32,20 @@ app.use("/Payment",paymentRouter);
 app.listen(PORT, () => {
   console.log(`Server is up and running on port number: ${PORT}`)
 })
+
+//this catches front-end URL
+/* http://localhost/8070/student */
+
+app.use("/api/auth" , require("./routes/auth"));
+app.use("/displayUsers" , require("./routes/auth"));
+app.use("/editUser" , require("./routes/auth"));
+//app.use("/products" , require("./routes/product"));
+
+//Error Handler (Should be the last piece of middleware)
+//app.use(errorHandler);
+
+const userRouter =require("./routes/user.js");
+
+app.use("/flights",userRouter);
+ 
+app.use("/api/auth",require("./routes/auth"));
