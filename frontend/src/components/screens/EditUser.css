@@ -1,0 +1,15 @@
+
+
+
+
+.update-form .btn, .update-form .btn:active {        
+	font-size: 16px;
+	color: #ebeeed;
+	font-weight: bold;
+	background: #05166a !important;
+	border: none;
+	min-width: 140px;
+}
+.update-form .btn:hover, .update-form .btn:focus {
+	background: #7cb1d7 !important;
+}
