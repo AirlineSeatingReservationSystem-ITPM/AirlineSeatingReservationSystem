@@ -1,3 +1,4 @@
+
 import { BrowserRouter as Router , Routes , Route } from "react-router-dom";
 //import StaffLogin from './components/staff/StaffLogin';
 import LoginScreens   from "./components/screens/Login";
@@ -20,10 +21,17 @@ import MainHeader from "./components/screens/mainHeader";
 
 
 
+import CreditCard from "./PaymentManagement/CreditCard/CreditCard";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import NavBar from "./components/NavBar";
+import Footer from "./components/Footer";
+
 
 function App() {
   return (
     <div className="App">
+
        
        <Router>
         <SocialMedia /> 
@@ -54,6 +62,15 @@ function App() {
         </Routes>
         <Footer/>
       </Router> 
+
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/card" element={<CreditCard />} />
+        </Routes>
+        <Footer/>
+      </Router>
+
     </div>
   );
 }
