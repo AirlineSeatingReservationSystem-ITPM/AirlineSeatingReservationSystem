@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
 
-const userLogin = ()=>{
+const UserLogin = ()=>{
 
     const history = useNavigate();
 
@@ -109,4 +109,4 @@ const userLogin = ()=>{
     )
 }
 
-export default userLogin;
+export default UserLogin;
