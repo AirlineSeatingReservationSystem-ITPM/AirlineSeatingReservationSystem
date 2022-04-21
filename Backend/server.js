@@ -46,6 +46,10 @@ app.use("/editUser" , require("./routes/auth"));
 
 const userRouter =require("./routes/user.js");
 
-app.use("/flights",userRouter);
+ 
  
 app.use("/api/auth",require("./routes/auth"));
+
+//chandima
+const flightRouter =require("./routes/flight.js");
+app.use("/flights",flightRouter);

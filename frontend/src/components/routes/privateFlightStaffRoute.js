@@ -1,6 +1,6 @@
 import {Navigate} from "react-router-dom";
 
- function PrivateUserStaffRoute({children}){
+ function PrivateFlightStaffRoute({children}){
      const isAuthenticated=true;
      if(isAuthenticated){
          return children;
@@ -8,4 +8,4 @@ import {Navigate} from "react-router-dom";
      return <Navigate to="/login"/>; 
  }
 
-export default PrivateUserStaffRoute;
+export default PrivateFlightStaffRoute;
