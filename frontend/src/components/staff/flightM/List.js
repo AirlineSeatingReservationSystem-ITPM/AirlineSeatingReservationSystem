@@ -45,7 +45,7 @@ export default class FlightList extends Component {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0 nav nav-tabs">
                 <li className="nav-item">
-                    <Link className="nav-link " aria-current="page" to = "/staff-home"><i class="fa fa-fw fa-home"></i>Home</Link>
+                    <Link className="nav-link " aria-current="page" to = "/staff-flightM-home"><i class="fa fa-fw fa-home"></i>Home</Link>
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link" to = "/add-flightM"><i class="fa fa-plus-square" aria-hidden="true"></i> Add Shcedule</Link>

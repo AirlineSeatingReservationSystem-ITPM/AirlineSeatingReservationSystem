@@ -35,7 +35,7 @@ const FlightManagerLogin = ()=>{
 
             localStorage.setItem("authTokenStaff" , data.token);
 
-            history("/staff-home");
+            history("/staff-flightM-home");
 
         } catch (error) {
             alert(error)
