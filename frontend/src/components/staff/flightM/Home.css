@@ -46,9 +46,9 @@ body {
 	font-weight: bold;
 	margin-top: 0;
 }
-.signup-form hr {
+/* .signup-form hr {
 	margin: 0 -30px 20px;
-}
+} */
 .signup-form .form-group {
 	margin-bottom: 20px;
 }
