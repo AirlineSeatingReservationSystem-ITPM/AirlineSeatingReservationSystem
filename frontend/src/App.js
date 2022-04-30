@@ -34,6 +34,7 @@ import DisplayFlights from "./components/staff/flightM/DisplayFlights";
 import AddFlights from "./components/staff/flightM/AddFlightShcedule";
 import Edit from "./components/staff/flightM/Edit";
 import FlightList from "./components/staff/flightM/List";
+import FlightReportGenerator from "./components/staff/flightM/Flights";
 //import PrivateFlightStaff from "./components/staff/flightM/login/PrivateFlightStaff";
 
 function App() {
@@ -187,6 +188,14 @@ function App() {
             element={
               <PrivateFlightStaffRoute>
                 <FMHeader/> 
+              </PrivateFlightStaffRoute>
+            }
+          />
+          <Route
+            path="/generateFlight-pdf"
+            element={
+              <PrivateFlightStaffRoute>
+                <FlightReportGenerator />
               </PrivateFlightStaffRoute>
             }
           />
