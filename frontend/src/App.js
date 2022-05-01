@@ -18,7 +18,9 @@ import UserList from "./components/staff/userM/List";
 import Footer from "./components/staff/Footer";
 import MainHeader from "./components/screens/mainHeader";
 import UserReportGenerator from "./components/staff/userM/Users";
+import AddMealRouter from "./components/staff/userM/Users";
 
+//kasun
 import CreditCard from "./PaymentManagement/CreditCard/CreditCard";
 import React from "react";
 
@@ -117,6 +119,15 @@ function App() {
             element={
               <PrivateUserStaffRoute>
                 <UserList />
+              </PrivateUserStaffRoute>
+            }
+          />
+
+          <Route
+            path="/generateUser-pdf"
+            element={
+              <PrivateUserStaffRoute>
+                <UserReportGenerator />
               </PrivateUserStaffRoute>
             }
           />
