@@ -17,7 +17,7 @@ import EditUsers from "./components/staff/userM/EditUsers";
 import UserList from "./components/staff/userM/List";
 import Footer from "./components/staff/Footer";
 import MainHeader from "./components/screens/mainHeader";
-  
+import UserReportGenerator from "./components/staff/userM/Users";
 
 import CreditCard from "./PaymentManagement/CreditCard/CreditCard";
 import React from "react";
@@ -62,7 +62,7 @@ function App() {
             element={[<MainHeader />, <EditUser />]}
           />
 
-           {/* User management */}
+          {/* User management */}
           <Route path="/staff-login" element={<StaffLogin />} />
 
           {/* <Route path="/staff-login-userM" element={<UserManagerLogin />} /> */}
@@ -122,9 +122,17 @@ function App() {
             }
           />
 
+          <Route
+            path="/generateUser-pdf"
+            element={
+              <PrivateUserStaffRoute>
+                <UserReportGenerator />
+              </PrivateUserStaffRoute>
+            }
+          />
 
           {/* flight management  */}
-          <Route path="/staff-login-flightM" element={<FlightManagerLogin />} /> 
+          <Route path="/staff-login-flightM" element={<FlightManagerLogin />} />
 
           {/* <Route
             path="/staff-flightM"
@@ -134,7 +142,7 @@ function App() {
               </PrivateFlightStaffRoute>
             }
           />   */}
-           
+
           <Route
             path="/staff-flightM"
             element={
@@ -142,7 +150,7 @@ function App() {
                 <FlightManagerLogin />
               </PrivateFlightStaffRoute>
             }
-          />  
+          />
           <Route
             path="/staff-flightM-Home"
             element={
@@ -187,7 +195,7 @@ function App() {
             path="/staff-header"
             element={
               <PrivateFlightStaffRoute>
-                <FMHeader/> 
+                <FMHeader />
               </PrivateFlightStaffRoute>
             }
           />
@@ -199,8 +207,6 @@ function App() {
               </PrivateFlightStaffRoute>
             }
           />
-
-
 
           {/* Payment Management */}
           <Route path="/card" element={<CreditCard />} />
