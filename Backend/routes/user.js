@@ -3,38 +3,6 @@ const router = require('express').Router();
 let path = require("path");
 let User = require('../models/user');
 
- /*
-http://localhost:8085/user/add
-router.route('/add').post( (req, res) => {
-    const id = req.body.id;
-    const flight =  req.body.flight;
-    const date = req.body.date;
-    const  destination = req.body.destination;
-    const sheduleddeparturetime = req.body.sheduleddeparturetime;
-    const assignplanetype = req.body.assignplanetype;
-    const capacity = Number(req.body.capacity);
-    const seatsreserved =Number(req.body.seatsreserved);
-    const availableclasses = req.body.availableclasses;
-
-    const newFlightData = {
-        id,
-        flight,
-        date,
-        destination,
-        sheduleddeparturetime,
-        assignplanetype,
-        capacity,
-        seatsreserved,
-        availableclasses
-    }
-
-    const newFlight = new Flight(newFlightData);
-
-    newFlight.save().then(() => {
-        res.json("Flight Added")
-    }).catch(err => res.status(400).json('Error: ' + err));
-});
-*/
 
 router.route("/").get((req , res)=>{ //route for display all
     

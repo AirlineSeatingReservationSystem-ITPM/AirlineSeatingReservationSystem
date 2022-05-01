@@ -45,11 +45,11 @@ app.use("/editUser" , require("./routes/auth"));
 //app.use(errorHandler);
 
 const userRouter =require("./routes/user.js");
-
 app.use("/api/auth",require("./routes/auth"));
 
-// const userReportRouter =require("./routes/Users.js");
-// app.use("/users",userReportRouter);
+//meal
+const MealRouter =require("./routes/meal.js");
+app.use("/meals",MealRouter);
 
 //chandima
 const flightRouter =require("./routes/flight.js");
