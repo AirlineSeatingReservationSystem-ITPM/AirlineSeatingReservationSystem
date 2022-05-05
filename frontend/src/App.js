@@ -18,7 +18,10 @@ import UserList from "./components/staff/userM/List";
 import Footer from "./components/staff/Footer";
 import MainHeader from "./components/screens/mainHeader";
 import UserReportGenerator from "./components/staff/userM/Users";
-import AddMealRouter from "./components/staff/userM/Users";
+import AddMeal from "./components/staff/userM/AddMeal";
+// import ListMeal from "./components/staff/userM/ListMeal";
+import DisplayMealsList from "./components/staff/userM/DisplayMealsList";
+import EditMealList from "./components/staff/userM/EditMealList";
 
 //kasun
 import CreditCard from "./PaymentManagement/CreditCard/CreditCard";
@@ -133,10 +136,37 @@ function App() {
           />
 
           <Route
-            path="/generateUser-pdf"
+            path="/add-userM"
             element={
               <PrivateUserStaffRoute>
-                <UserReportGenerator />
+                <AddMeal />
+              </PrivateUserStaffRoute>
+            }
+          />
+
+          <Route
+            path="/displayMeal-userM"
+            element={
+              <PrivateUserStaffRoute>
+                [<DisplayMealsList />]
+              </PrivateUserStaffRoute>
+            }
+          />
+
+            {/* <Route
+            path="/editMeal-userM"
+            element={
+              <PrivateUserStaffRoute>
+                 <ListMeal />
+              </PrivateUserStaffRoute>
+            }
+          /> */}
+
+          <Route
+            path="/editMeal-userM/:id"
+            element={
+              <PrivateUserStaffRoute>
+                <EditMealList />
               </PrivateUserStaffRoute>
             }
           />

@@ -66,21 +66,20 @@ const AddMealShcedule = () => {
                 <Link
                   className="nav-link "
                   aria-current="page"
-                  to="/staff-flightM-home"
+                  to="/staff-userM-home"
                 >
                   <i class="fa fa-fw fa-home"></i>Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link active" to="/add-flightM">
-                  <i class="fa fa-plus-square" aria-hidden="true"></i> Add
-                  shcedule
+                <Link className="nav-link active" to="/add-userM">
+                  <i class="fa fa-plus-square" aria-hidden="true"></i> Add Meal
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link " to="/display-flightM">
+                <Link className="nav-link " to="/displayMeal-userM">
                   <i class="fa fa-plane" aria-hidden="true"></i> Display
-                  Shcedules
+                  Meals
                 </Link>
               </li>
             </ul>
@@ -157,7 +156,7 @@ const AddMealShcedule = () => {
               placeholder="Enter Meal Type"
               className="form-control"
               name="mealtype"
-              value={mealname}
+              value={mealtype}
               onChange={(e) => setMealType(e.target.value)}
               required
             />
