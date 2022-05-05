@@ -15,7 +15,7 @@ const MealSchema = new Schema({
     mealname:{
         type:String,
         required:[true, "meal name is required"],
-        unique:true,
+        
     },
 
     mealtype:{
