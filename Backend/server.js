@@ -8,6 +8,7 @@ require("dotenv").config();
 const PORT = process.env.PORT || 8070;
 
 app.use(cors());
+// app middleware
 app.use(bodyParser.json());
 
 const URL = process.env.MONGODB_URL;
