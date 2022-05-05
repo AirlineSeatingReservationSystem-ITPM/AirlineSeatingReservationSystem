@@ -4,6 +4,8 @@ const userStaff = require("../models/userStaff");
 //const Staff= require("../models/staff");
 //const ErrorResponse = require("../utils/errorResponse");
 const sendEmail = require("../utils/sendEmail");
+const sendFlightEmail = require("../utils/sendFlightEmail");
+
 const crypto = require("crypto");
 const flightStaff = require("../models/flightStaff");
 
@@ -244,3 +246,37 @@ exports.loginStaffFlightM = async (req , res , next) =>{
     const token = user.getStaffSignedToken();
     res.status(200).json({success:true , token});
 }
+
+
+
+//---------------------------------------Email Sending Section------------------------------------------
+
+//Flight Management
+exports.sendFlightEmail = async (req , res , next) =>{
+    const {email , description} = req.body;
+
+    try {
+
+        const message = `
+        <h1>${description}</h1>
+        <p>If any concerns , please contact : 0774458521 </p>
+         `
+        try {
+            await sendFlightEmail({
+                to : email,
+                subject : "About Complain",
+                text : message
+            })
+
+            res.status(200).json({ success : true , data : "Email Sent"});
+
+        } catch (error) {
+            res.status(500).json({ success : false , data : "Email could not be sent"});
+            return next(new ErrorResponse("Email could not be sent") , 500);
+
+        }
+    } catch (error) {
+        next(error);
+    }
+} 
+

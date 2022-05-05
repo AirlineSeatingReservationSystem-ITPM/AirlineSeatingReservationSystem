@@ -18,6 +18,10 @@ import UserList from "./components/staff/userM/List";
 import Footer from "./components/staff/Footer";
 import MainHeader from "./components/screens/mainHeader";
 import UserReportGenerator from "./components/staff/userM/Users";
+
+//add complain-chandima
+import AddComplain from "./components/screens/AddComplain";
+
 import AddMeal from "./components/staff/userM/AddMeal";
 // import ListMeal from "./components/staff/userM/ListMeal";
 import DisplayMealsList from "./components/staff/userM/DisplayMealsList";
@@ -30,7 +34,7 @@ import React from "react";
 // import NavBar from "./components/NavBar";
 // import Footer from "./components/Footer";
 
-//flight managment
+//flight managment-IT20104962 (chandima)
 import FlightManagerLogin from "./components/staff/flightM/login/FlightManagerLogin";
 import PrivateFlightStaffRoute from "./components/routes/privateFlightStaffRoute";
 import FMHeader from "./components/staff/flightM/Header";
@@ -41,6 +45,11 @@ import Edit from "./components/staff/flightM/Edit";
 import FlightList from "./components/staff/flightM/List";
 import FlightReportGenerator from "./components/staff/flightM/Flights";
 //import PrivateFlightStaff from "./components/staff/flightM/login/PrivateFlightStaff";
+import DisplayComplains from "./components/staff/flightM/DisplayComplains";
+import ListComplain from "./components/staff/flightM/ListComplain";
+import EditComplain from "./components/staff/flightM/EditComplain";
+import Reply from "./components/staff/flightM/Reply";
+
 
 function App() {
   return (
@@ -65,6 +74,12 @@ function App() {
           <Route
             path="/editUser/:id"
             element={[<MainHeader />, <EditUser />]}
+          />
+
+           {/* chandima-add complain*/}
+           <Route
+            path="/AddComplain"
+            element={[<MainHeader />, <AddComplain />]}
           />
 
           {/* User management */}
@@ -136,6 +151,9 @@ function App() {
             }
           />
 
+ 
+          {/* chandima-flight management  */}
+
           <Route
             path="/add-userM"
             element={
@@ -173,6 +191,7 @@ function App() {
           />
 
           {/* flight management  */}
+
           <Route path="/staff-login-flightM" element={<FlightManagerLogin />} />
 
           {/* <Route
@@ -247,7 +266,42 @@ function App() {
                 <FlightReportGenerator />
               </PrivateFlightStaffRoute>
             }
+          /><Route
+          path="/complains-flightM"
+          element={
+            <PrivateFlightStaffRoute>
+              [<DisplayComplains />]
+            </PrivateFlightStaffRoute>
+          }
+        />
+        <Route
+            path="/editComplain-flightM"
+            element={
+              <PrivateUserStaffRoute>
+                 <ListComplain />
+              </PrivateUserStaffRoute>
+            }
           />
+          <Route
+            path="/editComplain-flightM/:id"
+            element={
+              <PrivateFlightStaffRoute>
+                <EditComplain/>
+              </PrivateFlightStaffRoute>
+            }
+          />
+
+         <Route
+            path="/complains-flightM"
+            element={
+              <PrivateFlightStaffRoute>
+                <Reply/>
+              </PrivateFlightStaffRoute>
+            }
+          />
+           
+          
+
 
           {/* Payment Management */}
           <Route path="/card" element={<CreditCard />} />

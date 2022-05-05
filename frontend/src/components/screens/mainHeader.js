@@ -53,7 +53,7 @@ function MainHeader() {
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link " to="#">
+              <Link className="nav-link " to="/AddComplain">
                 <i class="fa fa-handshake-o" aria-hidden="true"></i>Help
               </Link>
             </li>

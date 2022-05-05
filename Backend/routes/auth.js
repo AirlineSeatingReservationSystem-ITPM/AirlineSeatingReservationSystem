@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { register , login , forgotPassword , resetpassword, displayUsers, editUser , getUserById , deleteUserById, loginStaffUserM, registerStaffUserM, loginStaffFlightM, registerStaffFlightM } = require("../controllers/auth");
+const { register , login , forgotPassword , resetpassword, displayUsers, editUser , getUserById , deleteUserById, loginStaffUserM, registerStaffUserM, loginStaffFlightM, registerStaffFlightM , sendFlightEmail } = require("../controllers/auth");
  
 router.route("/register").post(register); // call the auth in controllers
 
@@ -16,6 +16,8 @@ router.route("/editUser/:id").put(editUser);
 router.route("/getUserById/:id").get(getUserById);
 
 router.route("/deleteUserById/:id").delete(deleteUserById);
+
+router.route("/sendFlightEmail").post(sendFlightEmail);
 
 //--------------------------Staff Routes------------------------------------------
 
