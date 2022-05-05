@@ -40,6 +40,7 @@ app.use("/api/auth" , require("./routes/auth"));
 app.use("/displayUsers" , require("./routes/auth"));
 app.use("/editUser" , require("./routes/auth"));
 //app.use("/products" , require("./routes/product"));
+app.use("/complain" , require("./routes/complain"));
 
 //Error Handler (Should be the last piece of middleware)
 //app.use(errorHandler);
