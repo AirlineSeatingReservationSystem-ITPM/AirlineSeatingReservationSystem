@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Cards from "react-credit-cards";
 import "./CreditCard.scss";
 import "./CardStyles.css";
 import axios from "axios";
 import "../../PaymentManagement/CreditCard/Card.css";
- import Swal from "sweetalert2";
+import Swal from "sweetalert2";
 
-export default class PaymentForm extends React.Component {
+export default class UpdateCard extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +15,6 @@ export default class PaymentForm extends React.Component {
       focus: "",
       name: "",
       number: "",
-      
     };
   }
 
@@ -32,34 +31,54 @@ export default class PaymentForm extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
 
-    const { cvc, expiry, focus, name, number} = this.state;
+    const id = this.props.match.params.id;
+
+    const { cvc, expiry, name, number } = this.state;
 
     const data = {
       cvc: cvc,
       expiry: expiry,
-      focus: focus,
       name: name,
       number: number,
-     
-      
     };
 
-    axios.post("/payment/add", data).then((res) => {
+    axios.put(`/payment/update/${id}`, data).then((res) => {
       if (res.data.success) {
+        this.setState({
+          cvc: "",
+          expiry: "",
+          name: "",
+          number: "",
+        });
       }
     });
-     Swal.fire({
-       position: "top-end",
-       icon: "success",
-       title: "Card Details added successfully",
-       showConfirmButton: false,
-       timer: 1500,
-     });
+    Swal.fire({
+      position: "top-end",
+      icon: "success",
+      title: "Card Details added Successful",
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
+  componentDidMount() {
+    const id = this.props.match.params.id;
+
+    axios.get(`/Payment/${id}`).then((res) => {
+      if (res.data.success) {
+        this.setState({
+          number: res.data.Payment.number,
+          name: res.data.Payment.name,
+          expiry: res.data.Payment.expiry,
+          cvc: res.data.Payment.cvc,
+        });
+
+        console.log(this.state.Payment);
+      }
+    });
+  }
 
   render() {
     return (
-      <div className="background"style={{backgroundColor:"#eeedff"}}>
       <div id="Payment">
         <div className="App-payment">
           <h1 className="h1">Card Information</h1>
@@ -69,16 +88,10 @@ export default class PaymentForm extends React.Component {
             focused={this.state.focus}
             name={this.state.name}
             number={this.state.number}
-            cardName={this.state.cardName}
-            
-            
-           
-            
           />
           <div className="cardContainer">
-            <form onSubmit={this.handleSubmit}>
-              <h3>🔴Please enter your card details below👇</h3>
-
+            <form >
+              <h3>Please enter your card details below</h3>
 
               <div className="form-group">
                 <h6>Enter Card Number:</h6>
@@ -86,14 +99,13 @@ export default class PaymentForm extends React.Component {
                   type="tel"
                   name="number"
                   className="form-control"
-                  placeholder="xxxx-xxxx-xxxx-xxxx"
                   pattern="[\d| ]{16,22}"
                   required
                   onChange={this.handleInputChange}
                   onFocus={this.handleInputFocus}
                   value={this.state.number}
                 />
-                
+                <small>E.g.: 49..., 51..., 36..., 37...</small>
               </div>
 
               <div className="form-group">
@@ -116,7 +128,7 @@ export default class PaymentForm extends React.Component {
                     type="tel"
                     name="expiry"
                     className="form-control"
-                    placeholder="MM/YY                                       📅"
+                    placeholder="MM/YY"
                     pattern="\d\d/\d\d"
                     required
                     onChange={this.handleInputChange}
@@ -131,7 +143,7 @@ export default class PaymentForm extends React.Component {
                     type="tel"
                     name="cvc"
                     className="form-control"
-                    placeholder="CVC                                           💳"
+                    placeholder="CVC"
                     pattern="\d{3,4}"
                     required
                     onChange={this.handleInputChange}
@@ -143,15 +155,14 @@ export default class PaymentForm extends React.Component {
 
               <div className="form-actions">
                 <div className="button1">
-                  <button className="btn btn-primary btn-lg col-sm-4">
-                    Add Card
+                  <button className="btn btn-primary btn-lg col-sm-4" onClick={this.handleSubmit}>
+                    Update Card
                   </button>
                 </div>
               </div>
             </form>
           </div>
         </div>
-      </div>
       </div>
     );
   }
