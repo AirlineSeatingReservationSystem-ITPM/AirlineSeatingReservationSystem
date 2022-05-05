@@ -21,6 +21,9 @@ function Header(){
             <li className="nav-item">
               <Link className="nav-link " to = "/display-flightM"><i class="fa fa-plane" aria-hidden="true"></i> Display  Shedule</Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link " to = "/complains-flightM"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Display Complains</Link>
+            </li> 
             {/* <li className="nav-item">
               <Link className="nav-link active" to = "#"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit schedule</Link>
             </li> */}
