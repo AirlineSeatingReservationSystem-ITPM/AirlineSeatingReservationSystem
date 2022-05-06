@@ -218,7 +218,7 @@ const AddMealShcedule = () => {
         </form>
         <br />
         <a href="/add">
-          <button type="submit" className="btn btn-success">
+          <button type="submit" className="btn btn-warning">
             <i class="fa fa-refresh" aria-hidden="true"></i> Refresh
           </button>
         </a>

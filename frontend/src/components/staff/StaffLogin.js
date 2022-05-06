@@ -241,7 +241,7 @@ const StaffLogin = ()=>{
             <p>
                 <img src={"kasun.png"} style={{width:"150px" , height:"150px"}}/>
               </p>
-              <Link to = "/staff-login-OrderM"><button type="button" className="read_more_btn">Login</button></Link>
+              <Link to = "/staff-login-paymentM"><button type="button" className="read_more_btn">Login</button></Link>
             </div>
           </div>
         </div>
