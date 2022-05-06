@@ -15,7 +15,7 @@ export default function RefundRequests(){
       >
         <br />
         <br />
-        <h1>📝RefundRequest✍🏻</h1>
+        <h1>📝Refund Request✍🏻</h1>
 
         <form >
           <div className="cmb-3">
@@ -45,7 +45,7 @@ export default function RefundRequests(){
             </label>
             <input
               type="text"
-              placeholder="Enter PassportNumber"
+              placeholder="Enter Passport Number"
               className="form-control"
               name="name"
              
@@ -97,7 +97,7 @@ export default function RefundRequests(){
             </label>
             <input
               type="text"
-              placeholder="Enter your Phone"
+              placeholder="Enter your Phone Number"
               className="form-control"
               name="email"
               
@@ -116,7 +116,7 @@ export default function RefundRequests(){
 
             <input
               type="text"
-              placeholder="Enter your email address"
+              placeholder="Enter your Description"
               className="form-control"
               name="email"
               
@@ -134,7 +134,7 @@ export default function RefundRequests(){
               className="btn btn-primary mt-3"
               
             >
-              <i class="fa fa-upload" aria-hidden="true"></i>{" "}
+              <i class="fa fa-upload" aria-hidden="true"></i>{" Refund Request upload "}
               
             </button>
           </div>
