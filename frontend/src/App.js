@@ -110,12 +110,12 @@ function App() {
           {/* <Route path="/card" element={[<NavBar />, <CreditCard />]} /> */}
           {/* <Route path="/CreditCardDetails" element={[<NavBar />,<CreditCardDetails />]} /> */}
           <Route path="/edit/:id" element={<UpdateCard />} />
-          <Route path="/Payment" element={<PaymentManagement />} />
-          <Route path="/CreditCardDetails" element={<CreditCardDetails />} />
-          <Route path="/SelectCredit" element={<SelectCredit />} />
-          <Route path="/CreditCard" element={<CreditCard />} />
-          <Route path="/CreditCardDetails2" element={<CreditCardDetails2 />} />
-          <Route path="/CreditCard2" element={<CreditCard2 />} />
+          <Route path="/Payment" element={[<MainHeader />,<PaymentManagement />]} />
+          <Route path="/CreditCardDetails" element={[<MainHeader />,<CreditCardDetails />]} />
+          <Route path="/SelectCredit" element={[<MainHeader />,<SelectCredit />]} />
+          <Route path="/CreditCard" element={[<MainHeader />,<CreditCard />]} />
+          <Route path="/CreditCardDetails2" element={[<MainHeader />,<CreditCardDetails2 />]} />
+          <Route path="/CreditCard2" element={[<MainHeader />,<CreditCard2 />]} />
 
 
 
@@ -142,7 +142,7 @@ function App() {
             element={[<MainHeader />, <CreditCardDetails />]}
           />
           
-          <Route path="/RefundRequests" element={<RefundRequests />} />
+          <Route path="/RefundRequests" element={[<MainHeader />,<RefundRequests />]} />
 
           {/* User management */}
           <Route path="/staff-login" element={<StaffLogin />} />
