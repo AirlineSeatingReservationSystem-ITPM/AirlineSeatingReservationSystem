@@ -9,9 +9,6 @@ router.route("/add").post((req, res) => {
   const name = req.body.name;
   const expiry = req.body.expiry;
   const cvc = req.body.cvc;
-  
-  
-  
 
   const newPaymentData = {
     number,
@@ -42,82 +39,72 @@ router.route("/add").post((req, res) => {
 //      });
 //  });
 
-
-
 //old code
 
-router.get('/',(_req,res) =>{
-  Payment.find().exec((err,Payment) =>{
-      if(err){
-          return res.status(400).json({
-                  error:err
-          });
-      }
-      return res.status(200).json({
-          success:true,
-          existingPayment:Payment
+router.get("/", (_req, res) => {
+  Payment.find().exec((err, Payment) => {
+    if (err) {
+      return res.status(400).json({
+        error: err,
       });
+    }
+    return res.status(200).json({
+      success: true,
+      existingPayment: Payment,
+    });
   });
 });
 
-
-
-
-
-
 //update
 
-router.put('/update/:id',(req,res)=>{
+router.put("/update/:id", (req, res) => {
   Payment.findByIdAndUpdate(
     req.params.id,
     {
-        $set:req.body
+      $set: req.body,
     },
-   (err,post)=>{
-        if(err){
-            return res.status(400).json({error:err});
-        }
+    (err, post) => {
+      if (err) {
+        return res.status(400).json({ error: err });
+      }
 
-        return res.status(200).json({
-            success:"Updated Succesfully"
-        });
-   }
-);
+      return res.status(200).json({
+        success: "Updated Succesfully",
+      });
+    }
+  );
 });
 
 //delete
 
-router.delete('/delete/:id',(req,res) =>{
-  Payment.findByIdAndRemove(req.params.id).exec((err,deletedPayment) =>{
-
-    if(err) return res.status(400).json({
-        message:"Delete unsuccesful",err
-    });
+router.delete("/delete/:id", (req, res) => {
+  Payment.findByIdAndRemove(req.params.id).exec((err, deletedPayment) => {
+    if (err)
+      return res.status(400).json({
+        message: "Delete unsuccesful",
+        err,
+      });
 
     return res.json({
-        message:"Delete successfull",deletedPayment
+      message: "Delete successfull",
+      deletedPayment,
     });
-
-
-});
+  });
 });
 
- router.get("/Payment/:id",(req,res) =>{
+router.get("/Payment/:id", (req, res) => {
+  let PaymentId = req.params.id;
 
-   let PaymentId = req.params.id;
+  Payment.findById(PaymentId, (err, Payment) => {
+    if (err) {
+      return res.status(400).json({ success: false, err });
+    }
 
-  Payment.findById(PaymentId,(err,Payment) =>{
-      if(err){
-           return res.status(400).json({success:false, err});       }
-
-       return res.status(200).json({
-            success:true,
-            Payment
-       });
-   });
-
-
- });
-
+    return res.status(200).json({
+      success: true,
+      Payment,
+    });
+  });
+});
 
 module.exports = router;
