@@ -109,7 +109,7 @@ const AddMealShcedule = () => {
       <br></br>
       <div
         className="container"
-        style={{ width: "50%", backgroundColor: "#b3ffff"}}
+        style={{ width: "50%", backgroundColor: "#b3ffff" }}
       >
         <br />
         <br />
@@ -228,11 +228,21 @@ const AddMealShcedule = () => {
           </div>
         </form>
         <br />
-         <a href="/add-userM">
+
+        <a href="/add-userM">
           <button type="submit" className="btn btn-success">
             <i class="fa fa-refresh" aria-hidden="true"></i> Reset
           </button>
-        </a> 
+        </a>
+
+        <a href="/add">
+          <button type="submit" className="btn btn-success"></button>
+        </a>
+        <a href="/add">
+          <button type="submit" className="btn btn-warning">
+            <i class="fa fa-refresh" aria-hidden="true"></i> Refresh
+          </button>
+        </a>
         <br />
         <br />
       </div>

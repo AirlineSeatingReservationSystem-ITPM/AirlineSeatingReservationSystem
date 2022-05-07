@@ -143,7 +143,7 @@ export default function EditProfile() {
           <Link to="/displayUsers">
           <button
             type="submit"
-            className="btn btn-primary btn-success"
+            className="btn btn-primary btn-primary"
             style={{ float: "none" }}
           >
             <i class="fa fa-reply" aria-hidden="true"></i>Back

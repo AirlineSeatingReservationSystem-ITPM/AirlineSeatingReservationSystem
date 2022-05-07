@@ -43,7 +43,7 @@ export default class StudentTableRow extends Component {
                 <div style={{ display: "flex", justifyContent: "space-around" }}>
                     <div> 
                     <Link className="edit-link" to={`/edit-flightM/${this.props.obj._id}`}>
-                        <button size="sm"  variant="warning" className="btn btn-success"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
+                        <button size="sm"  variant="warning" className="btn btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit</button>
                     </Link >
                     </div>&nbsp;&nbsp;
                      
