@@ -70,10 +70,10 @@ const AddComplain = () => {
                 <input 
                     type="text"
                     className="form-control"
-                    placeholder="Enter the NIC Number"
+                    placeholder="Enter the Passport Number as Complain ID"
                     name="id"
                     value={id}
-                    onChange={(e)=> setId(e.target.value)} required
+                    onChange={(e)=> setId(e.target.value)} required pattern = "[0-9]{10}"
                 /><br></br>
                 <label for="name" style={{float:"left",color:"black"}} className="form-label">Name</label>
                 <input 
@@ -85,18 +85,28 @@ const AddComplain = () => {
                     onChange={(e)=> setName(e.target.value)} required
                 /><br></br>
                 <label for="type" style={{float:"left",color:"black"}} className="form-label">Type</label>
-                <input 
+                {/* <input 
                     type="type"
                     placeholder="Enter the type"
                     className="form-control"
                     name="type"
                     value={type}
                     onChange={(e)=> setType(e.target.value)} required
-                /><br></br>
+                /><br></br> */}
+
+<select value={type} onChange={(e) => setType(e.target.value)}>            
+            <option value="About Seat Reservation">About Seat Reservation</option>
+            <option value="About meals">About meals</option>
+            <option value="About Ticket Reservation">About Ticket Reservation</option>
+            <option value="About Medical">About Medical</option>
+            <option value="About Seat Reservation">About Seat Reservation</option>
+          </select>
+          <br></br><br></br><br></br><br></br>
                 <label for="description" style={{float:"left",color:"black"}} className="form-label">Description</label>
-                <input 
-                    type="text-ariea"
-                    placeholder="Enter the description Airport"
+                <textarea 
+              rows = "8" cols = "50"
+              placeholder="Type here your message"
+                     
                     className="form-control"
                     name="description"
                     value={description}
@@ -110,6 +120,7 @@ const AddComplain = () => {
                     name="email"
                     value={email}
                     onChange={(e)=> setEmail(e.target.value)} required
+                    pattern="[0-9a-zA-Z%&$@.]+@[a-zA-Z]+\.+[a-zA-Z]{2,3}"
                 /><br></br>
                 
                  
