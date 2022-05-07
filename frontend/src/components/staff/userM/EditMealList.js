@@ -158,7 +158,7 @@ const Edit = () => {
             />
           </Form.Group>
 
-          <Form.Group controlId="mealtype">
+          {/* <Form.Group controlId="mealtype">
             <Form.Label style={{ float: "left", color: "black" }}>
               Meal Type
             </Form.Label>
@@ -169,19 +169,52 @@ const Edit = () => {
               placeholder="✍🏻 Edit meal type"
               required
             />
+          </Form.Group> */}
+            <br></br> 
+          <Form.Group controlId="mealtype">
+            <Form.Label style={{ float: "left", color: "black" }}>
+              Meal Type
+            </Form.Label>
+            <select
+              value={mealtype}
+              onChange={(e) => setMealType(e.target.value)}
+            >
+               <option value="Breakfast">Breakfast</option>
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+            </select>
+            {/* <Form.Control
+              type="text"
+              value={mealtype}
+              onChange={(e) => setMealType(e.target.value)}
+              placeholder="✍🏻 Edit meal type"
+              required
+            /> */}
+            <br></br>  <br></br>
           </Form.Group>
 
           <Form.Group controlId="mealportion">
             <Form.Label style={{ float: "left", color: "black" }}>
               Meal Portion
             </Form.Label>
-            <Form.Control
+            <select
+              value={mealportion}
+              onChange={(e) => setMealPortion(e.target.value)}
+            >
+             <option value="Large">Large</option>
+              <option value="Large">Large</option>
+              <option value="Normal">Normal</option>
+              <option value="Family Pack">Family Pack</option>
+              <option value="Kids">Kids</option>
+            </select>
+            {/* <Form.Control
               type="text"
               value={mealportion}
               onChange={(e) => setMealPortion(e.target.value)}
               placeholder="✍🏻 Edit meal portion"
               required
-            />
+            /> */}
           </Form.Group>
 
           <br />
@@ -191,12 +224,6 @@ const Edit = () => {
           </Button>
           <br></br>
           <br></br>
-
-          {/* <a href="/add">
-          <button type="submit" className="btn btn-success">
-            <i class="fa fa-refresh" aria-hidden="true"></i> Refresh
-          </button>
-        </a> */}
 
           <div style={{ display: "flex", justifyContent: "space-around" }}>
             <Link to="/displayMeal-userM">

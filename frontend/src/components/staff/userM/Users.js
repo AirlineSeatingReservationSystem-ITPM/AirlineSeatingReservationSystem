@@ -154,11 +154,11 @@ export default class Users extends Component {
         <br />
         <center>
           <br />
-          <span style={{ color: "white" }}>{"Copyright © "}</span>
+          <span style={{ color: "#33ccff" }}>{"Copyright © "}</span>
 
-          <span style={{ color: "lightcoral" }}>Sky Air Ways</span>
+          <span style={{ color: "#0000cc" }}>Sky Air Ways</span>
 
-          <span style={{ color: "white" }}>
+          <span style={{ color: "#33ccff" }}>
             {" " + new Date().getFullYear() + " . "}
           </span>
         </center>
