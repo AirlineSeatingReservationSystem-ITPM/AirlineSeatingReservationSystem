@@ -17,13 +17,13 @@ export default function Home(){
             {/* <form> */}
             <div className="bg"> 
             <div className="signup-form" style={{opacity:"0.8"}}>
-            <br></br><br></br><br></br><br></br><br></br>   
+            <br></br><br></br><br></br><br></br><br></br>    
             <form >
 
                 <h2 style={{color:"white"}}>....Welcome Flight Management....</h2>
                 {/* {error && <span className="error-message" style={{color:"red"}}>{error}</span>}  {/ternary operator/} */}
                 <p>🙏Ayubowan from Sri Lanka🙏</p>
-                <hr />
+                {/* <hr /> */}
 
                  
             </form>

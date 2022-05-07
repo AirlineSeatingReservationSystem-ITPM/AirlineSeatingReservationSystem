@@ -3,7 +3,6 @@ import axios from "axios";
 import "../../styles.css";
 import { Link } from "react-router-dom";
 
-
 export default function DisplayUserProfile() {
   const [students, setStudents] = useState([]);
   useEffect(() => {
@@ -75,6 +74,8 @@ export default function DisplayUserProfile() {
                         Edit Profile
                       </button>
                     </Link>
+
+                    
                   </div>
                 </div>
               </div>
@@ -142,7 +143,7 @@ export default function DisplayUserProfile() {
         <Link to="/">
           <button
             type="submit"
-            className="btn btn-primary btn-success"
+            className="btn btn-primary btn-primary"
             style={{ float: "none" }}
           >
             <i class="fa fa-reply" aria-hidden="true"></i>Back

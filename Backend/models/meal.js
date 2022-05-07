@@ -7,28 +7,26 @@ const crypto = require("crypto");
 //const passwordComplexity = require("joi-password-complexity");
 
 const MealSchema = new Schema({
-    mealid :{
-        type:String,
-        required : [true, " meal id is required"]
-    },
+  mealid: {
+    type: String,
+    required: [true, " meal id is required"],
+  },
 
-    mealname:{
-        type:String,
-        required:[true, "meal name is required"],
-        
-    },
+  mealname: {
+    type: String,
+    required: [true, "meal name is required"],
+  },
 
-    mealtype:{
-        type:String,
-        required:[true, "meal type is required"],
-    },
+  mealtype: {
+    type: String,
+    required: [true, "meal type is required"],
+  },
 
-    mealportion :{
-        type:String,
-        required : [true, "meal portion is required"]
-    }
-  
-})
+  mealportion: {
+    type: String,
+    required: [true, "meal portion is required"],
+  },
+});
 
-const Meal = mongoose.model("Meal" , MealSchema)
+const Meal = mongoose.model("Meal", MealSchema);
 module.exports = Meal;
