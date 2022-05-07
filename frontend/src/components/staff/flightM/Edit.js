@@ -112,7 +112,7 @@ const Edit = () => {
 
                     <Form.Group controlId="Sheduleddeparturetime ">
                     <Form.Label style={{float:"left",color:"black"}}>Sheduled Departure time </Form.Label>
-                    <Form.Control type="text" value={sheduleddeparturetime } onChange={(e) => setSheduledDepartureTime(e.target.value)} placeholder="✍🏻 Edit Sheduled departure time " required />
+                    <Form.Control type="time" value={sheduleddeparturetime } onChange={(e) => setSheduledDepartureTime(e.target.value)} placeholder="✍🏻 Edit Sheduled departure time " required />
                     </Form.Group><br></br>
 
                     <Form.Group controlId="Assignplanetype">

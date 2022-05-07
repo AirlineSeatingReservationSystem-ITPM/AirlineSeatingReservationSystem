@@ -56,9 +56,7 @@ export default class ComplainList extends Component {
                 <li className="nav-item">
               <Link className="nav-link active" to = "/complains-flightM"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Display Complains</Link>
             </li> 
-                <li className="nav-item">
-                    <Link className="nav-link " to = "/display-flightM"><i class="fa fa-truck" aria-hidden="true"></i>Help</Link>
-                </li>
+                 
                 </ul>
                 <form className="d-flex">
                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" style={{width:"60%"}}/>
@@ -74,7 +72,7 @@ export default class ComplainList extends Component {
         </Link> */}
         <div className="bg4"></div>
         <br/>
-        <h1 style={{fontcolor:"red"}}>✈️Complain List✈️</h1>
+        <h1 style={{fontcolor:"red"}}>🚩Complain List🚩</h1>
           <div className="table-wrapper container">
            
             <Table striped bordered hoverstyle={{background:"#171717" , padding:"10px 10px 10px 10px" , opacity:"0.9"}}>
