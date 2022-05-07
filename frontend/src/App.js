@@ -28,8 +28,28 @@ import DisplayMealsList from "./components/staff/userM/DisplayMealsList";
 import EditMealList from "./components/staff/userM/EditMealList";
 
 //kasun
-import CreditCard from "./PaymentManagement/CreditCard/CreditCard";
+
 import React from "react";
+// import CreditCardDetails from "./components/screens/CreditCard";
+import PrivatePaymentStaffRoute from "./components/routes/privatePaymentStaffRoute";
+import PaymentManagerLogin from "./components/staff/paymentM/Login/PaymentManagerLogin";
+import PaymentHeader from "./components/staff/paymentM/paymentHeader";
+import PaymentHome from "./components/staff/paymentM/Home";
+import RefundRequests from "./components/screens/RefundRequests";
+import CreditCardDetails from "./components/screens/CreditCardDetails";
+import SelectCredit from "./components/screens/SelectCredit";
+import CreditCard from "./components/screens/CreditCard";
+import CreditCardDetails2 from "./components/screens/CreditCardDetails2";
+import CreditCard2 from "./components/screens/CreditCard2"
+
+ import NavBar from "./components/NavBar";
+// import Footer2 from "./components/Footer2";
+// import CreditCardDetails from "./PaymentManagement/CreditCard/CreditCardDetails";
+// import SocialMedia from "./SocialMedia";
+import UpdateCard from "./PaymentManagement/CreditCard/UpdateCard";
+import PaymentManagement from "./components/staff/PaymentManagement";
+// import Login from "./PaymentManagement/CreditCard/Login";
+
 
 // import NavBar from "./components/NavBar";
 // import Footer from "./components/Footer";
@@ -49,12 +69,30 @@ import DisplayComplains from "./components/staff/flightM/DisplayComplains";
 import ListComplain from "./components/staff/flightM/ListComplain";
 import EditComplain from "./components/staff/flightM/EditComplain";
 import Reply from "./components/staff/flightM/Reply";
+import RefundRequest from "./components/screens/RefundRequests";
+
 
 
 function App() {
   return (
     <div className="App">
+       
       <Router>
+      
+        <SocialMedia/>
+        
+        
+        
+         
+          
+         
+          
+         
+          
+       
+        {/* <Footer2/> */}
+        
+
         <SocialMedia />
 
         <Routes>
@@ -67,6 +105,22 @@ function App() {
             path="/passwordreset/:token"
             element={<ResetPasswordScreens />}
           />
+          
+
+          {/* <Route path="/card" element={[<NavBar />, <CreditCard />]} /> */}
+          {/* <Route path="/CreditCardDetails" element={[<NavBar />,<CreditCardDetails />]} /> */}
+          <Route path="/edit/:id" element={<UpdateCard />} />
+          <Route path="/Payment" element={<PaymentManagement />} />
+          <Route path="/CreditCardDetails" element={<CreditCardDetails />} />
+          <Route path="/SelectCredit" element={<SelectCredit />} />
+          <Route path="/CreditCard" element={<CreditCard />} />
+          <Route path="/CreditCardDetails2" element={<CreditCardDetails2 />} />
+          <Route path="/CreditCard2" element={<CreditCard2 />} />
+
+
+
+        
+
           <Route
             path="/displayUsers"
             element={[<MainHeader />, <DisplayUsers />]}
@@ -81,6 +135,14 @@ function App() {
             path="/AddComplain"
             element={[<MainHeader />, <AddComplain />]}
           />
+
+          {/* kasun Payment */}
+          <Route
+            path="/CreditCardDetails"
+            element={[<MainHeader />, <CreditCardDetails />]}
+          />
+          
+          <Route path="/RefundRequests" element={<RefundRequests />} />
 
           {/* User management */}
           <Route path="/staff-login" element={<StaffLogin />} />
@@ -304,9 +366,32 @@ function App() {
 
 
           {/* Payment Management */}
-          <Route path="/card" element={<CreditCard />} />
+          <Route path="/staff-login-paymentM" element={<PaymentManagerLogin />} /> 
+
+          <Route
+            path="/staff-paymentM"
+            element={
+              <PrivatePaymentStaffRoute>
+                <PaymentManagerLogin />
+              </PrivatePaymentStaffRoute>
+            }
+          />  
+
+
+
+            <Route
+            path="/staff-paymentM-Home"
+            element={
+              <PrivatePaymentStaffRoute>
+                [<PaymentHeader />, <PaymentHome />]
+              </PrivatePaymentStaffRoute>
+            }
+          />
+
+          {/* <Route path="/card" element={<CreditCard />} /> */}
         </Routes>
         <Footer />
+
       </Router>
     </div>
   );

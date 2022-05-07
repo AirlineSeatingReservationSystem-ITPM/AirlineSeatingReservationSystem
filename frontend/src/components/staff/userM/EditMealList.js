@@ -1,19 +1,17 @@
-import React, { useState , useEffect} from "react";
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button';
-import axios from 'axios';
-import {Link} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import axios from "axios";
+import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
-
 const Edit = () => {
+  const [mealid, setMealId] = useState("");
+  const [mealname, setMealName] = useState("");
+  const [mealtype, setMealType] = useState("");
+  const [mealportion, setMealPortion] = useState("");
 
-  const [mealid, setMealId] = useState("")
-  const [mealname, setMealName] = useState("")
-  const [mealtype, setMealType] = useState("")
-  const [mealportion, setMealPortion] = useState("")
- 
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
 
   const ID = useParams();
 
@@ -22,30 +20,38 @@ const Edit = () => {
   // }
 
   useEffect(() => {
-    (async ()=> {
-      await axios.get(`http://localhost:8085/meals/get/${ID.id}`).then((res) => {
-        setMealId(res.data.mealid)
-        setMealName(res.data.mealname)
-        setMealType(res.data.mealtype)
-        setMealPortion(res.data.mealportion)
+    (async () => {
+      await axios
+        .get(`http://localhost:8085/meals/get/${ID.id}`)
+        .then((res) => {
+          setMealId(res.data.mealid);
+          setMealName(res.data.mealname);
+          setMealType(res.data.mealtype);
+          setMealPortion(res.data.mealportion);
 
-        console.log(res.data.mealid)
-         
-      }).catch(() => null)
-    })()
-  } ,[])
+          console.log(res.data.mealid);
+        })
+        .catch(() => null);
+    })();
+  }, []);
 
-  const onSubmit = async(e) => {
-    e.preventDefault()
+  const onSubmit = async (e) => {
+    e.preventDefault();
 
-     await axios.put(`http://localhost:8085/meals/update/${ID.id}` , {mealid , mealname , mealtype , mealportion })
-       .then((res) => {
-        alert('Meal successfully updated')
-      }).catch((error) => {
-         alert(error)
-       })
-   
-  }
+    await axios
+      .put(`http://localhost:8085/meals/update/${ID.id}`, {
+        mealid,
+        mealname,
+        mealtype,
+        mealportion,
+      })
+      .then((res) => {
+        alert("Meal successfully updated");
+      })
+      .catch((error) => {
+        alert(error);
+      });
+  };
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
@@ -78,17 +84,29 @@ const Edit = () => {
 
               <li className="nav-item">
                 <Link className="nav-link" to="/display-userM">
-                  <i class="fa fa-users" aria-hidden="true"></i> Display
+                  <i class="fa fa-user-circle" aria-hidden="true"></i> Display
                   Users
                 </Link>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link active" to="#">
-                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Display Meals List
+                <Link className="nav-link " to="/add-userM">
+                  <i class="fa fa-cutlery" aria-hidden="true"></i> Add Meals
                 </Link>
               </li>
 
+              <li className="nav-item">
+                <Link className="nav-link " to="/displayMeal-userM">
+                  <i class="fa fa-coffee" aria-hidden="true"></i> Display Meals
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <Link className="nav-link active" to="#">
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
+                  Meals List
+                </Link>
+              </li>
             </ul>
             <form className="d-flex">
               <input
@@ -98,7 +116,7 @@ const Edit = () => {
                 aria-label="Search"
                 style={{ width: "60%" }}
               />
-              <button className="btn btn-outline-success" type="submit" >
+              <button className="btn btn-outline-success" type="submit">
                 <i class="fa fa-fw fa-search"></i>Search
               </button>
             </form>
@@ -106,8 +124,10 @@ const Edit = () => {
         </div>
       </nav>
 
-
-      <div className="form-wrapper container" style={{ width: "50%",backgroundColor:"#b3d9ff" }}>
+      <div
+        className="form-wrapper container"
+        style={{ width: "50%", backgroundColor: "#b3d9ff" }}
+      >
         <br />
         <br />
         <h1>Need to Update ? 🤔</h1>
@@ -165,16 +185,21 @@ const Edit = () => {
           </Form.Group>
 
           <br />
-          <Button   variant="info" size="lg" block="block" type="submit">
+          <Button variant="info" size="lg" block="block" type="submit">
             <i className="fa fa-paper-plane-o" aria-hidden="true"></i> Update
             Meal Details
           </Button>
-          <br></br><br></br>
-          
+          <br></br>
+          <br></br>
+
+          {/* <a href="/add">
+          <button type="submit" className="btn btn-success">
+            <i class="fa fa-refresh" aria-hidden="true"></i> Refresh
+          </button>
+        </a> */}
+
           <div style={{ display: "flex", justifyContent: "space-around" }}>
-            
             <Link to="/displayMeal-userM">
-             
               <button
                 type="submit"
                 className="btn btn-primary btn-primary"
@@ -182,23 +207,17 @@ const Edit = () => {
               >
                 <i class="fa fa-reply" aria-hidden="true"></i>Back
               </button>
-              
             </Link>
-
           </div>
-          
         </Form>
         <br />
         <br />
         {/* <br />
         <br /> */}
       </div>
-        <br></br>
+      <br></br>
     </div>
   );
-}
-  
-
-
+};
 
 export default Edit;

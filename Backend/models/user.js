@@ -7,67 +7,74 @@ const crypto = require("crypto");
 //const passwordComplexity = require("joi-password-complexity");
 
 const UserSchema = new Schema({
-    username :{
-        type:String,
-        required : [true, "Please enter a username"]
-    },
+  username: {
+    type: String,
+    required: [true, "Please enter a username"],
+  },
 
-    email:{
-        type:String,
-        required:[true, "Please provide a email"],
-        unique:true,
-        match:[/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/ , "Please provide a valid email"]
-    },
+  email: {
+    type: String,
+    required: [true, "Please provide a email"],
+    unique: true,
+    match: [
+      /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+      "Please provide a valid email",
+    ],
+  },
 
-    password:{
-        type:String,
-        required:[true, "Please enter a password"],
-        select:false,
-        minlength:6 //minimum password length is 6
-    },
+  password: {
+    type: String,
+    required: [true, "Please enter a password"],
+    select: false,
+    minlength: 6, //minimum password length is 6
+  },
 
-    // passportno:{
-    //     type:String,
-    //     required:[true, "Please enter a passportno"],
-    //     select:false,
-    //     minlength:10 //minimum passport length is 10
-    // },
+  // passportno:{
+  //     type:String,
+  //     required:[true, "Please enter a passportno"],
+  //     select:false,
+  //     minlength:10 //minimum passport length is 10
+  // },
 
-    resetPasswordToken :String,
-    resetPasswordExpire: Date
-
-})
+  resetPasswordToken: String,
+  resetPasswordExpire: Date,
+});
 
 //sign-up route
-UserSchema.pre("save", async function(next){
-    if(!this.isModified("password")){
-        next();
-    }
-    const salt = await bcrypt.genSalt(10);
-    this.password = await bcrypt.hash(this.password, salt);
-
+UserSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
     next();
-})
+  }
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+
+  next();
+});
 
 //login route
-UserSchema.methods.matchPasswords = async function(password){
-    return await bcrypt.compare(password , this.password);  //check the entered password and password which is received from the db
-}
+UserSchema.methods.matchPasswords = async function (password) {
+  return await bcrypt.compare(password, this.password); //check the entered password and password which is received from the db
+};
 
 //for json web token(JWT)
-UserSchema.methods.getSignedToken = function(){
-return jwt.sign({id : this._id} , process.env.JWT_SECRET , {expiresIn : process.env.JWT_EXPIRE} );
-}
+UserSchema.methods.getSignedToken = function () {
+  return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_EXPIRE,
+  });
+};
 
 //for reset json web token
-UserSchema.methods.getResetPasswordToken = function(){
-    const resetToken = crypto.randomBytes(20).toString("hex");
+UserSchema.methods.getResetPasswordToken = function () {
+  const resetToken = crypto.randomBytes(20).toString("hex");
 
-    this.resetPasswordToken = crypto.createHash("sha256").update(resetToken).digest("hex");
+  this.resetPasswordToken = crypto
+    .createHash("sha256")
+    .update(resetToken)
+    .digest("hex");
 
-    this.resetPasswordExpire = Date.now() + 10 * (60 * 1000);
-    return resetToken;
-}
+  this.resetPasswordExpire = Date.now() + 10 * (60 * 1000);
+  return resetToken;
+};
 
-const User = mongoose.model("User" , UserSchema)
+const User = mongoose.model("User", UserSchema);
 module.exports = User;

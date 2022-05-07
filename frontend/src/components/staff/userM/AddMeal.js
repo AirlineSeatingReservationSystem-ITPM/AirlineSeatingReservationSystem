@@ -66,20 +66,27 @@ const AddMealShcedule = () => {
                 <Link
                   className="nav-link "
                   aria-current="page"
-                  to="/staff-userM-home"
+                  to="/staff-home"
                 >
                   <i class="fa fa-fw fa-home"></i>Home
                 </Link>
               </li>
+
+              <li className="nav-item">
+                <Link className="nav-link" to="/display-userM">
+                  <i class="fa fa-user-circle" aria-hidden="true"></i> Display
+                  Users
+                </Link>
+              </li>
+
               <li className="nav-item">
                 <Link className="nav-link active" to="/add-userM">
-                  <i class="fa fa-plus-square" aria-hidden="true"></i> Add Meal
+                  <i class="fa fa-cutlery" aria-hidden="true"></i> Add Meal
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link " to="/displayMeal-userM">
-                  <i class="fa fa-plane" aria-hidden="true"></i> Display
-                  Meals
+                  <i class="fa fa-coffee" aria-hidden="true"></i> Display Meals
                 </Link>
               </li>
             </ul>
@@ -124,6 +131,7 @@ const AddMealShcedule = () => {
               value={mealid}
               onChange={(e) => setMealId(e.target.value)}
               required
+              pattern="[A-Z][0-9]{4}"
             />
             <br></br>
             <label
@@ -151,15 +159,16 @@ const AddMealShcedule = () => {
             >
               Meal Type
             </label>
-            <input
-              type="text"
-              placeholder="Enter Meal Type"
-              className="form-control"
-              name="mealtype"
+            <select
               value={mealtype}
               onChange={(e) => setMealType(e.target.value)}
-              required
-            />
+            >
+              <option value="Breakfast">Breakfast</option>
+              <option value="Breakfast">Breakfast</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Dinner">Dinner</option>
+            </select>
+            <br></br>
             <br></br>
 
             <label
@@ -169,18 +178,20 @@ const AddMealShcedule = () => {
             >
               Meal Portion
             </label>
-            <input
-              type="text"
-              placeholder="Enter Meal Portion"
-              className="form-control"
-              name="mealportion"
+
+            <select
               value={mealportion}
               onChange={(e) => setMealPortion(e.target.value)}
-              required
-            />
+            >
+              <option value="Large">Large</option>
+              <option value="Large">Large</option>
+              <option value="Normal">Normal</option>
+              <option value="Family Pack">Family Pack</option>
+              <option value="Kids">Kids</option>
+            </select>
             <br></br>
 
-             {/* upload photo */}
+            {/* upload photo */}
             {/* <div className="jumbotron">
                 <h1 className="display-4">Upload a Photo of Chef</h1>
                 <p className="lead">
@@ -195,7 +206,6 @@ const AddMealShcedule = () => {
                 name="photo"
                 onChange={handlePhoto} required
             />         */}
-
           </div>
 
           <br />
@@ -217,11 +227,16 @@ const AddMealShcedule = () => {
           </div>
         </form>
         <br />
-        <a href="/add">
+
+        {/* <a href="/add">
           <button type="submit" className="btn btn-success">
+
+        <a href="/add">
+          <button type="submit" className="btn btn-warning">
+
             <i class="fa fa-refresh" aria-hidden="true"></i> Refresh
           </button>
-        </a>
+        </a> */}
         <br />
         <br />
       </div>

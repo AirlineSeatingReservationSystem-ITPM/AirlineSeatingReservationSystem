@@ -50,9 +50,20 @@ const DisplayUsersList = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/display-userM">
+                <Link className="nav-link active" to="/display-userM">
                   <i class="fa fa-user-circle" aria-hidden="true"></i> Display
                   Users
+                </Link>
+              </li>
+
+              <li className="nav-item">
+              <Link className="nav-link " to = "/add-userM"><i class="fa fa-cutlery" aria-hidden="true"></i> Add Meals</Link>
+            </li>
+            
+            <li className="nav-item">
+                <Link className="nav-link " to="/displayMeal-userM">
+                  <i class="fa fa-coffee" aria-hidden="true"></i> Display
+                  Meals
                 </Link>
               </li>
             </ul>

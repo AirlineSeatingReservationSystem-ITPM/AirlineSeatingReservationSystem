@@ -47,6 +47,17 @@ function MainHeader() {
             </li>
 
             <li className="nav-item">
+              <Link className="nav-link " to="/CreditCard">
+                <i class="fa fa-plane" aria-hidden="true"></i>Add New Card
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link " to="/RefundRequests">
+                <i class="fa fa-plane" aria-hidden="true"></i>Refund Requests
+              </Link>
+            </li>
+
+            <li className="nav-item">
               <Link className="nav-link " to="#">
                 <i class="fa fa-users" aria-hidden="true"></i>About Us
               </Link>

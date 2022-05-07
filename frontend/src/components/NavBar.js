@@ -1,8 +1,9 @@
 import React from "react";
+import "./NavBar.css";
 
 const NavBar = () => {
   return (
-     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <button
           class="navbar-toggler"
@@ -17,75 +18,42 @@ const NavBar = () => {
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <a class="navbar-brand mt-2 mt-lg-0" href="#">
+          <h2>SKYLINE AIRWAYS</h2>
+          {/* <a class="navbar-brand mt-2 mt-lg-0" href="#">
             <img
               src="https://mdbcdn.b-cdn.net/img/logo/mdb-transaprent-noshadows.webp"
               height="50"
               alt="MDB Logo"
               loading="lazy"
             />
-          </a>
+          </a> */}
 
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          { <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link" href="#">
-                Dashboard
+              <button className="btn btn-success"><a href="/" style={{textDecoration:'none',color:'white'}}>HOME</a></button>
+              
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                Team
+              <button className="btn btn-success"><a href="/card" style={{textDecoration:'none',color:'white'}}>Add Card</a></button>
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">
-                Projects
+              <button className="btn btn-success"><a href="/CreditCardDetails" style={{textDecoration:'none',color:'white'}}>View added cards</a></button>
               </a>
             </li>
-          </ul>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+              <button className="btn btn-success"><a href="/CreditCardDetails" style={{textDecoration:'none',color:'white'}}>help</a></button>
+              </a>
+            </li>
+          </ul> }
         </div>
 
         <div class="d-flex align-items-center">
-          <a class="text-reset me-3" href="#">
-            <i class="fas fa-shopping-cart"></i>
-          </a>
-
-          <div class="dropdown">
-            <a
-              class="text-reset me-3 dropdown-toggle hidden-arrow"
-              href="#"
-              id="navbarDropdownMenuLink"
-              role="button"
-              data-mdb-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <i class="fas fa-bell"></i>
-              <span class="badge rounded-pill badge-notification bg-danger">
-                1
-              </span>
-            </a>
-            <ul
-              class="dropdown-menu dropdown-menu-end"
-              aria-labelledby="navbarDropdownMenuLink"
-            >
-              <li>
-                <a class="dropdown-item" href="#">
-                  Some news
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">
-                  Another news
-                </a>
-              </li>
-              <li>
-                <a class="dropdown-item" href="#">
-                  Something else here
-                </a>
-              </li>
-            </ul>
-          </div>
-
           <div class="dropdown">
             <a
               class="dropdown-toggle d-flex align-items-center hidden-arrow"
@@ -118,7 +86,7 @@ const NavBar = () => {
                 </a>
               </li>
               <li>
-                <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="/login">
                   Logout
                 </a>
               </li>
