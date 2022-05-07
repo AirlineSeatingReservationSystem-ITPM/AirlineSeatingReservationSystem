@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+// import { image } from "html2canvas/dist/types/css/types/image";
 
 const AddMealShcedule = () => {
   const [loading, setLoading] = useState(false); //additional
@@ -108,7 +109,7 @@ const AddMealShcedule = () => {
       <br></br>
       <div
         className="container"
-        style={{ width: "50%", backgroundColor: "#b3ffff" }}
+        style={{ width: "50%", backgroundColor: "#b3ffff"}}
       >
         <br />
         <br />
@@ -227,11 +228,11 @@ const AddMealShcedule = () => {
           </div>
         </form>
         <br />
-        {/* <a href="/add">
+         <a href="/add-userM">
           <button type="submit" className="btn btn-success">
-            <i class="fa fa-refresh" aria-hidden="true"></i> Refresh
+            <i class="fa fa-refresh" aria-hidden="true"></i> Reset
           </button>
-        </a> */}
+        </a> 
         <br />
         <br />
       </div>
