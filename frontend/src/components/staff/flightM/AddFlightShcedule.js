@@ -359,7 +359,7 @@ const AddFlightShcedule = () => {
           </div>
         </form>
         <br />
-        <a href="/add">
+        <a href="/add-flightM">
           <button type="submit" className="btn btn-success">
             <i class="fa fa-refresh" aria-hidden="true"></i> Refresh
           </button>

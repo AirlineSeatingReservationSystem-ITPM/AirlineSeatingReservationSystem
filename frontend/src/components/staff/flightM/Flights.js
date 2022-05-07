@@ -9,7 +9,7 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core//Paper";
 import axios from "axios";
 import jsPDF from "jspdf";
-//import "./Report.css";
+// import "./Reply.css";
 import html2canvas from "html2canvas";
 import { Link } from "react-router-dom";
 
@@ -153,7 +153,7 @@ export default class Flights extends Component {
               <button
                 variant="contained"
                 color="primary"
-                style={{ float: "right", background: "lightgreen" }}
+                style={{ float: "right", background: "#00ffcc" }}
               >
                 <i class="fa fa-reply" aria-hidden="true"></i> Go Back
               </button>
@@ -168,11 +168,11 @@ export default class Flights extends Component {
         <br />
         <center>
           <br />
-          <span style={{ color: "white" }}>{"Copyright © "}</span>
+          <span style={{ color: "#33ccff" }}>{"Copyright © "}</span>
 
-          <span style={{ color: "lightcoral" }}>Sky Airways</span>
+          <span style={{ color: "#0000cc" }}>Sky Airways</span>
 
-          <span style={{ color: "white" }}>
+          <span style={{ color: "#33ccff" }}>
             {" " + new Date().getFullYear() + " . "}
           </span>
         </center>
