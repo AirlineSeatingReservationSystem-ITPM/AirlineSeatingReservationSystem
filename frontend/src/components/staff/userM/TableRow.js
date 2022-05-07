@@ -39,7 +39,7 @@ export default class StudentTableRow extends Component {
                 className="edit-link"
                 to={`/edit-userM/${this.props.obj._id}`}
               >
-                <button size="sm" variant="success" className="btn btn-success">
+                <button size="sm" variant="success" className="btn btn-warning">
                   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                 </button>
               </Link>

@@ -1,0 +1,57 @@
+.h1 {
+  font-weight: bold;
+  margin: 0 0 50px;
+  text-align: center;
+  color: #000000;
+}
+
+.headercard{
+  color: #000000;
+  font-weight: bold;
+}
+
+.namecard{
+  color: #000000;
+  margin-left:-75%;
+  
+}
+.hodercard{
+  color: #000000;
+  margin-left:-69%;
+}
+.expcard{
+  color: #000000;
+  margin-left:-40%;
+}
+.cvccard{
+  color: #000000;
+  margin-left:-40%;
+}
+
+
+.App-payment {
+  padding: 180px;
+}
+
+form {
+  margin: 40px auto 0;
+  max-width: 575px;
+}
+
+.form-actions {
+  margin-top: 15px;
+}
+
+.form-group {
+  padding: 8px;
+}
+
+.row {
+  padding: 8px;
+}
+
+.button1 {
+  padding: 10px 100px;
+  width: 100%;
+  text-align: center;
+}
