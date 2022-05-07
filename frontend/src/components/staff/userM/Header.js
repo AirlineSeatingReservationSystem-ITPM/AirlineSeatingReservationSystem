@@ -19,7 +19,14 @@ function Header(){
             <li className="nav-item">
               <Link className="nav-link " to = "/display-userM"><i class="fa fa-users" aria-hidden="true"></i> Display  Users</Link>
             </li>
-             
+
+            <li className="nav-item">
+              <Link className="nav-link " to = "/add-userM"><i class="fa fa-users" aria-hidden="true"></i> Add Meals</Link>
+            </li>
+            
+            
+    
+
           </ul>
           <form className="d-flex">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" style={{width:"60%"}}/>
