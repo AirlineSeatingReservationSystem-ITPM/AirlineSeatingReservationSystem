@@ -81,6 +81,16 @@ import ListComplain from "./components/staff/flightM/ListComplain";
 import EditComplain from "./components/staff/flightM/EditComplain";
 import Reply from "./components/staff/flightM/Reply";
 
+//IT19992358 Nuwan
+import MainHome from "./components/screens/mainHome";
+import Bookingform from "./components/screens/bookingform";
+import BookingTable from "./components/screens/bookingtable";
+import BookingList from "./components/screens/bookinglist";
+import NAvBar from "./components/screens/NavBar";
+import SuccessPage from "./components/screens/successPage";
+import Checkbookings from "./components/screens/checkbookings";
+import Specialbookings from "./components/screens/specialbookings";
+
 
 
 function App() {
@@ -133,6 +143,15 @@ function App() {
           <Route path="/InsuranceFull" element={[<MainHeader />,<InsuranceFull />]} />
           <Route path="/Paymentdone" element={<Paymentdone />} />
           
+          //IT19992358 (Nuwan)
+          <Route path="/mainHome" element={[<MainHeader />, <MainHome/>]} />
+          <Route path="/bookingform" element={[<MainHeader />,<Bookingform/>]} />
+          <Route path="/bookingtable" element={[<MainHeader />,<BookingTable/>]} />
+          <Route path="/bookinglist" element={[<MainHeader />,<BookingList/>]} />
+          <Route path="/successPage" element={[<MainHeader />,<SuccessPage/>]} />
+          <Route path="/checkbookings" element={[<MainHeader />,<Checkbookings/>]} />
+          <Route path="/specialbookings" element={[<MainHeader />,<Specialbookings/>]} />
+   
 
           <Route
             path="/displayUsers"

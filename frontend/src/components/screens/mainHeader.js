@@ -35,7 +35,7 @@ function MainHeader() {
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link " to="#">
+              <Link className="nav-link " to="/mainHome">
                 <i class="fa fa-list-alt" aria-hidden="true"></i>Bookings
               </Link>
             </li>

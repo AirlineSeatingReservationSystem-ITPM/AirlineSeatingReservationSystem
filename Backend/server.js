@@ -29,6 +29,7 @@ connection.once("open", () => {
 });
 
 const paymentRouter = require("../Backend/routes/paymentManagement/payment");
+const bookingRouter = require("../Backend/routes/bookingform");
 
 app.use("/Payment", paymentRouter);
 
@@ -44,6 +45,7 @@ app.use("/displayUsers", require("./routes/auth"));
 app.use("/editUser", require("./routes/auth"));
 //app.use("/products" , require("./routes/product"));
 app.use("/complain", require("./routes/complain"));
+app.use("/bookingform",bookingRouter);
 
 //Error Handler (Should be the last piece of middleware)
 //app.use(errorHandler);
