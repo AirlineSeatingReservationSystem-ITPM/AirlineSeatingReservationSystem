@@ -145,9 +145,11 @@ const RegisterScreen = ()=>{
                 <div className="form-group">
                     <button type="submit" className="btn btn-primary btn-lg">Sign Up</button>
                 </div>
-            </form>
+            
             <div style={{color:"#000066"}} className="text-center"><h5><b>Already have an account 🧐?</b></h5> <Link to="/" style={{color : "white" ,textDecoration:"none" , backgroundColor:"#000066"}}><i class="fa fa-mouse-pointer" aria-hidden="true"></i> <b>Login here</b></Link></div>
+            </form>   
         </div>
+        <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
        </div>
     )
 }
