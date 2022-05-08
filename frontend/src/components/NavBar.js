@@ -28,29 +28,58 @@ const NavBar = () => {
             />
           </a> */}
 
-          { <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-              <button className="btn btn-success"><a href="/" style={{textDecoration:'none',color:'white'}}>HOME</a></button>
-              
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-              <button className="btn btn-success"><a href="/card" style={{textDecoration:'none',color:'white'}}>Add Card</a></button>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-              <button className="btn btn-success"><a href="/CreditCardDetails" style={{textDecoration:'none',color:'white'}}>View added cards</a></button>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-              <button className="btn btn-success"><a href="/CreditCardDetails" style={{textDecoration:'none',color:'white'}}>help</a></button>
-              </a>
-            </li>
-          </ul> }
+          {
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <button className="btn btn-success">
+                    <a
+                      href="/"
+                      style={{ textDecoration: "none", color: "white" }}
+                    >
+                      HOME
+                    </a>
+                  </button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <button className="btn btn-success">
+                    <a
+                      href="/card"
+                      style={{ textDecoration: "none", color: "white" }}
+                    >
+                      Add Card
+                    </a>
+                  </button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <button className="btn btn-success">
+                    <a
+                      href="/CreditCardDetails"
+                      style={{ textDecoration: "none", color: "white" }}
+                    >
+                      View added cards
+                    </a>
+                  </button>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  <button className="btn btn-success">
+                    <a
+                      href="/CreditCardDetails"
+                      style={{ textDecoration: "none", color: "white" }}
+                    >
+                      help
+                    </a>
+                  </button>
+                </a>
+              </li>
+            </ul>
+          }
         </div>
 
         <div class="d-flex align-items-center">

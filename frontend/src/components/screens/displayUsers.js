@@ -74,8 +74,6 @@ export default function DisplayUserProfile() {
                         Edit Profile
                       </button>
                     </Link>
-
-                    
                   </div>
                 </div>
               </div>

@@ -17,7 +17,7 @@ export default function EditProfile() {
       const { data } = await axios.get(
         `http://localhost:8085/api/auth/getUserById/${id}`
       );
-     
+
       setUsername(data.username);
       setEmail(data.email);
       setPhoto(data.photo);
@@ -52,8 +52,11 @@ export default function EditProfile() {
 
           {/* Display data from API */}
 
-          <div className="student" style={{ width: "40%" , marginLeft:"500px"}}>
-            <div className="details" >
+          <div
+            className="student"
+            style={{ width: "40%", marginLeft: "500px" }}
+          >
+            <div className="details">
               <div>
                 <h2>User Account Info</h2>
                 <center>
@@ -77,7 +80,6 @@ export default function EditProfile() {
                       <form onSubmit={updateHandler}>
                         <table>
                           <th>
-                            
                             <tr>
                               <td>Username :</td>
                               <td>
@@ -132,7 +134,7 @@ export default function EditProfile() {
               </div>
             </div>
           </div>
-{/* 
+          {/* 
           <br />
           <br />
           <br />
@@ -141,16 +143,15 @@ export default function EditProfile() {
           <br />
           <br /> */}
           <Link to="/displayUsers">
-          <button
-            type="submit"
-            className="btn btn-primary btn-primary"
-            style={{ float: "none" }}
-          >
-            <i class="fa fa-reply" aria-hidden="true"></i>Back
-          </button>
-        </Link>
+            <button
+              type="submit"
+              className="btn btn-primary btn-primary"
+              style={{ float: "none" }}
+            >
+              <i class="fa fa-reply" aria-hidden="true"></i>Back
+            </button>
+          </Link>
 
-          
           <br />
           <br />
         </div>

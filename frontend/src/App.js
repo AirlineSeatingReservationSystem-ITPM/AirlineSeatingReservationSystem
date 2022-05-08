@@ -42,25 +42,23 @@ import CreditCardDetails from "./components/screens/CreditCardDetails";
 import SelectCredit from "./components/screens/SelectCredit";
 import CreditCard from "./components/screens/CreditCard";
 import CreditCardDetails2 from "./components/screens/CreditCardDetails2";
-import CreditCard2 from "./components/screens/CreditCard2"
+import CreditCard2 from "./components/screens/CreditCard2";
 import RefundRequestsview from "./components/staff/paymentM/RefundRequestsview";
 import PaymentReportGenerator from "./components/staff/paymentM/RefundRequests";
 import Display from "./components/staff/paymentM/Display";
 import TravelInsuvarance from "./components/screens/TravelInsuvarance";
 import HomeSc from "./components/screens/HomeSc";
-import UpdateCard from "./components/screens/UpdateCard"
+import UpdateCard from "./components/screens/UpdateCard";
 import InsuranceFull from "./components/screens/InsuranceFull";
 import Paymentdone from "./components/screens/Paymentdone";
 
-
- import NavBar from "./components/NavBar";
+import NavBar from "./components/NavBar";
 // import Footer2 from "./components/Footer2";
 // import CreditCardDetails from "./PaymentManagement/CreditCard/CreditCardDetails";
 // import SocialMedia from "./SocialMedia";
 // import UpdateCard from "./PaymentManagement/CreditCard/UpdateCard";
 import PaymentManagement from "./components/staff/PaymentManagement";
 // import Login from "./PaymentManagement/CreditCard/Login";
-
 
 // import NavBar from "./components/NavBar";
 // import Footer from "./components/Footer";
@@ -81,33 +79,18 @@ import ListComplain from "./components/staff/flightM/ListComplain";
 import EditComplain from "./components/staff/flightM/EditComplain";
 import Reply from "./components/staff/flightM/Reply";
 
-
-
 function App() {
   return (
     <div className="App">
-       
       <Router>
-      
-        <SocialMedia/>
-        
-        
-        
-         
-          
-         
-          
-         
-          
-       
+        <SocialMedia />
+
         {/* <Footer2/> */}
-        
 
         <SocialMedia />
 
         <Routes>
           {/* <Route path="/" element={<StaffLogin/>} /> */}
-
           <Route path="/" element={<LoginScreens />} />
           <Route path="/register" element={<RegisterScreens />} />
           <Route path="/forgotpassword" element={<ForgotPasswordScreens />} />
@@ -115,25 +98,52 @@ function App() {
             path="/passwordreset/:token"
             element={<ResetPasswordScreens />}
           />
-          
           //IT20081720 (Kasun)
           {/* <Route path="/card" element={[<NavBar />, <CreditCard />]} /> */}
           {/* <Route path="/CreditCardDetails" element={[<NavBar />,<CreditCardDetails />]} /> */}
           <Route path="/edit/:id" element={<UpdateCard />} />
-          <Route path="/Payment" element={[<MainHeader />,<PaymentManagement />]} />
-          <Route path="/CreditCardDetails" element={[<MainHeader />,<CreditCardDetails />]} />
-          <Route path="/SelectCredit" element={[<MainHeader />,<SelectCredit />]} />
-          <Route path="/CreditCard" element={[<MainHeader />,<CreditCard />]} />
-          <Route path="/CreditCardDetails2" element={[<MainHeader />,<CreditCardDetails2 />]} />
-          <Route path="/CreditCard2" element={[<MainHeader />,<CreditCard2 />]} />
-          <Route path="/RefundRequestsview" element={[<PaymentHeader />,<RefundRequestsview />]} />
-          <Route path="/TravelInsuvarance" element={[<MainHeader />,<TravelInsuvarance />]} />
-          <Route path="/HomeSc" element={[<MainHeader />,<HomeSc />]} />
-          <Route path="/UpdateCard/:id" element={[<MainHeader />,<UpdateCard />]} />
-          <Route path="/InsuranceFull" element={[<MainHeader />,<InsuranceFull />]} />
+          <Route
+            path="/Payment"
+            element={[<MainHeader />, <PaymentManagement />]}
+          />
+          <Route
+            path="/CreditCardDetails"
+            element={[<MainHeader />, <CreditCardDetails />]}
+          />
+          <Route
+            path="/SelectCredit"
+            element={[<MainHeader />, <SelectCredit />]}
+          />
+          <Route
+            path="/CreditCard"
+            element={[<MainHeader />, <CreditCard />]}
+          />
+          <Route
+            path="/CreditCardDetails2"
+            element={[<MainHeader />, <CreditCardDetails2 />]}
+          />
+          <Route
+            path="/CreditCard2"
+            element={[<MainHeader />, <CreditCard2 />]}
+          />
+          <Route
+            path="/RefundRequestsview"
+            element={[<PaymentHeader />, <RefundRequestsview />]}
+          />
+          <Route
+            path="/TravelInsuvarance"
+            element={[<MainHeader />, <TravelInsuvarance />]}
+          />
+          <Route path="/HomeSc" element={[<MainHeader />, <HomeSc />]} />
+          <Route
+            path="/UpdateCard/:id"
+            element={[<MainHeader />, <UpdateCard />]}
+          />
+          <Route
+            path="/InsuranceFull"
+            element={[<MainHeader />, <InsuranceFull />]}
+          />
           <Route path="/Paymentdone" element={<Paymentdone />} />
-          
-
           <Route
             path="/displayUsers"
             element={[<MainHeader />, <DisplayUsers />]}
@@ -142,6 +152,13 @@ function App() {
             path="/editUser/:id"
             element={[<MainHeader />, <EditUser />]}
           />
+
+          {/* chandima-add complain*/}
+          <Route
+            path="/AddComplain"
+            element={[<MainHeader />, <AddComplain />]}
+          />
+
 
           <Route
             path="/AboutUs"
@@ -159,25 +176,24 @@ function App() {
             element={[<MainHeader />, <MediCare />]}
           />
 
+
           {/* kasun Payment */}
           <Route
             path="/CreditCardDetails"
             element={[<MainHeader />, <CreditCardDetails />]}
           />
-          
-          <Route path="/RefundRequests" element={[<MainHeader />,<RefundRequests />]} />
-
+          <Route
+            path="/RefundRequests"
+            element={[<MainHeader />, <RefundRequests />]}
+          />
           {/* User management */}
           <Route path="/staff-login" element={<StaffLogin />} />
-
           {/* <Route path="/staff-login-userM" element={<UserManagerLogin />} /> */}
           {/* <Route path="/staff-userM" element={<UserManagerLogin />} /> */}
           {/* <Route path="/staff-home" element={[<Header />, <Home />]} /> */}
           {/* <Route path="/display-userM" element={[<DisplayUsersList />]} /> */}
-
           {/* <Route path="/edit-userM/:id" element={<EditUsers />} /> */}
           {/* <Route path="/edit-userM" element={<UserList />} /> */}
-
           <Route
             path="/staff-login-userM"
             element={
@@ -226,7 +242,6 @@ function App() {
               </PrivateUserStaffRoute>
             }
           />
-
           <Route
             path="/generateUser-pdf"
             element={
@@ -235,10 +250,7 @@ function App() {
               </PrivateUserStaffRoute>
             }
           />
-
- 
           {/* chandima-flight management  */}
-
           <Route
             path="/add-userM"
             element={
@@ -247,7 +259,6 @@ function App() {
               </PrivateUserStaffRoute>
             }
           />
-
           <Route
             path="/displayMeal-userM"
             element={
@@ -256,8 +267,7 @@ function App() {
               </PrivateUserStaffRoute>
             }
           />
-
-            {/* <Route
+          {/* <Route
             path="/editMeal-userM"
             element={
               <PrivateUserStaffRoute>
@@ -265,7 +275,6 @@ function App() {
               </PrivateUserStaffRoute>
             }
           /> */}
-
           <Route
             path="/editMeal-userM/:id"
             element={
@@ -274,11 +283,8 @@ function App() {
               </PrivateUserStaffRoute>
             }
           />
-
           {/* flight management  */}
-
           <Route path="/staff-login-flightM" element={<FlightManagerLogin />} />
-
           {/* <Route
             path="/staff-flightM"
             element={
@@ -287,7 +293,6 @@ function App() {
               </PrivateFlightStaffRoute>
             }
           />   */}
-
           <Route
             path="/staff-flightM"
             element={
@@ -351,19 +356,20 @@ function App() {
                 <FlightReportGenerator />
               </PrivateFlightStaffRoute>
             }
-          /><Route
-          path="/complains-flightM"
-          element={
-            <PrivateFlightStaffRoute>
-              [<DisplayComplains />]
-            </PrivateFlightStaffRoute>
-          }
-        />
-        <Route
+          />
+          <Route
+            path="/complains-flightM"
+            element={
+              <PrivateFlightStaffRoute>
+                [<DisplayComplains />]
+              </PrivateFlightStaffRoute>
+            }
+          />
+          <Route
             path="/editComplain-flightM"
             element={
               <PrivateUserStaffRoute>
-                 <ListComplain />
+                <ListComplain />
               </PrivateUserStaffRoute>
             }
           />
@@ -371,26 +377,23 @@ function App() {
             path="/editComplain-flightM/:id"
             element={
               <PrivateFlightStaffRoute>
-                <EditComplain/>
+                <EditComplain />
               </PrivateFlightStaffRoute>
             }
           />
-
-         <Route
+          <Route
             path="/complains-flightM"
             element={
               <PrivateFlightStaffRoute>
-                <Reply/>
+                <Reply />
               </PrivateFlightStaffRoute>
             }
           />
-           
-          
-
-
           {/* Payment Management */}
-          <Route path="/staff-login-paymentM" element={<PaymentManagerLogin />} /> 
-
+          <Route
+            path="/staff-login-paymentM"
+            element={<PaymentManagerLogin />}
+          />
           <Route
             path="/staff-paymentM"
             element={
@@ -398,8 +401,8 @@ function App() {
                 <PaymentManagerLogin />
               </PrivatePaymentStaffRoute>
             }
-          />  
-            <Route
+          />
+          <Route
             path="/generateRefund-pdf"
             element={
               <PrivatePaymentStaffRoute>
@@ -407,9 +410,7 @@ function App() {
               </PrivatePaymentStaffRoute>
             }
           />
-
-
-            <Route
+          <Route
             path="/staff-paymentM-Home"
             element={
               <PrivatePaymentStaffRoute>
@@ -417,22 +418,17 @@ function App() {
               </PrivatePaymentStaffRoute>
             }
           />
-
           <Route
             path="/Display"
             element={
               <PrivatePaymentStaffRoute>
-                 <Display />
+                <Display />
               </PrivatePaymentStaffRoute>
             }
           />
-
-          
-
           {/* <Route path="/card" element={<CreditCard />} /> */}
         </Routes>
         <Footer />
-
       </Router>
     </div>
   );

@@ -93,7 +93,7 @@ function MainHeader() {
               aria-label="Search"
               style={{ width: "60%" }}
             />
-            <button className="btn btn-outline-success" type="submit" >
+            <button className="btn btn-outline-success" type="submit">
               <i class="fa fa-fw fa-search"></i>Search
             </button>
           </form>
