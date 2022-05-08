@@ -126,7 +126,7 @@ function App() {
           <Route path="/RefundRequestsview" element={[<PaymentHeader />,<RefundRequestsview />]} />
           <Route path="/TravelInsuvarance" element={[<MainHeader />,<TravelInsuvarance />]} />
           <Route path="/HomeSc" element={[<MainHeader />,<HomeSc />]} />
-          <Route path="/UpdateCard" element={[<MainHeader />,<UpdateCard />]} />
+          <Route path="/UpdateCard/:id" element={[<MainHeader />,<UpdateCard />]} />
           <Route path="/InsuranceFull" element={[<MainHeader />,<InsuranceFull />]} />
           
 
