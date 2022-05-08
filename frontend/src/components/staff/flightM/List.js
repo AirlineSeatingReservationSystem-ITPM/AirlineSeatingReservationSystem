@@ -54,8 +54,8 @@ export default class FlightList extends Component {
                     <Link className="nav-link active" to = "/display-flightM"><i class="fa fa-plane" aria-hidden="true"></i>Display Shcedule</Link>
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link " to = "/display-flightM"><i class="fa fa-truck" aria-hidden="true"></i>Help</Link>
-                </li>
+              <Link className="nav-link " to = "/complains-flightM"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Display Complains</Link>
+            </li>
                 </ul>
                 <form className="d-flex">
                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" style={{width:"60%"}}/>

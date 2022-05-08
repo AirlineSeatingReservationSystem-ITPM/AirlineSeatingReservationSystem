@@ -69,7 +69,7 @@ function MainHeader() {
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link " to="#">
+              <Link className="nav-link " to="/AboutUs">
                 <i class="fa fa-users" aria-hidden="true"></i>About Us
               </Link>
             </li>
@@ -77,6 +77,11 @@ function MainHeader() {
             <li className="nav-item">
               <Link className="nav-link " to="/AddComplain">
                 <i class="fa fa-handshake-o" aria-hidden="true"></i>Help
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link " to="/MediCare">
+                <i class="fa fa-medkit" aria-hidden="true"></i>Health Care
               </Link>
             </li>
           </ul>

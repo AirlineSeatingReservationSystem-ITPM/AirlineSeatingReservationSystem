@@ -60,9 +60,14 @@ const DisplayMealsList = () => {
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" to="/displayMeal-userM">
-                  <i class="fa fa-user-circle" aria-hidden="true"></i> Display
-                  Meals
+                <Link className="nav-link" to="/add-userM">
+                  <i class="fa fa-plus-square" aria-hidden="true"></i> Add Meal
+                </Link>
+              </li>
+
+              <li className="nav-item">
+                <Link className="nav-link active" to="/displayMeal-userM">
+                  <i class="fa fa-coffee" aria-hidden="true"></i> Display Meals
                 </Link>
               </li>
             </ul>
@@ -132,7 +137,12 @@ const DisplayMealsList = () => {
                     <Link to={`/editMeal-userM/${i._id}`}>
                       <button className="btn btn-primary">Edit</button>
                     </Link>{" "}
-                    <button className="btn btn-danger" onClick= {() => DeleteMeal(i._id)}>Delete</button>
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => DeleteMeal(i._id)}
+                    >
+                      Delete
+                    </button>
                   </div>
                 </div>
               </div>

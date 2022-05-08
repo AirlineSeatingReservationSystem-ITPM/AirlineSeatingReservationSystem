@@ -168,6 +168,7 @@ const RegisterScreen = () => {
                         />
                     </div>
                 </div> */}
+
           <div className="form-group">
             <label className="form-check-label">
               <input type="checkbox" required="required" /> I accept the{" "}
@@ -204,3 +205,36 @@ const RegisterScreen = () => {
 };
 
 export default RegisterScreen;
+
+
+                <div className="form-group">
+                    <label className="form-check-label"><input type="checkbox" required="required" /> I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
+                </div>
+                <div className="form-group">
+                    <button type="submit" className="btn btn-primary btn-lg">Sign Up</button>
+                </div>
+
+            {/* </form> */}
+            <div style={{color:"#000066"}} className="text-center"><h5><b>Already have an account 🧐?</b></h5> <Link to="/" style={{color : "white" ,textDecoration:"none" , backgroundColor:"#000066"}}><i class="fa fa-mouse-pointer" aria-hidden="true"></i> <b>Login here</b></Link></div>
+            </form>
+        </div>
+        <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
+
+            
+            <div style={{color:"#000066"}} className="text-center"><h5><b>Already have an account 🧐?</b></h5> <Link to="/" style={{color : "white" ,textDecoration:"none" , backgroundColor:"#000066"}}><i class="fa fa-mouse-pointer" aria-hidden="true"></i> <b>Login here</b></Link></div>
+ 
+            </form>
+        
+        </div>
+        <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+ 
+            </form>   
+        </div>
+        <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+ 
+       </div>
+    )
+}
+
+export default RegisterScreen;
+

@@ -67,11 +67,11 @@ const AddComplain = () => {
             <input
               type="text"
               className="form-control"
-              placeholder="Enter the NIC Number"
+              placeholder="Enter the Passport Number"
               name="id"
               value={id}
               onChange={(e) => setId(e.target.value)}
-              required
+              required pattern = "[0-9]{10}"
             />
             <br></br>
             <label
@@ -88,26 +88,36 @@ const AddComplain = () => {
               name="name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              required
+            //   required pattern = "[0-9]{10}"
             />
             <br></br>
-            <label
-              for="type"
+            <label for="type"
               style={{ float: "left", color: "black" }}
-              className="form-label"
-            >
-              Type
-            </label>
-            <input
-              type="type"
-              placeholder="Enter the type"
-              className="form-control"
-              name="type"
-              value={type}
-              onChange={(e) => setType(e.target.value)}
-              required
-            />
-            <br></br>
+              className="form-label">Type
+              <select value={type} onChange={(e) => setType(e.target.value)}>            
+            <option value="About Seat Reservation">About Seat Reservation</option>
+            <option value="About meals">About meals</option>
+            <option value="About Ticket Reservation">About Ticket Reservation</option>
+            <option value="About Medical">About Medical</option>
+            <option value="About Seat Reservation">About Seat Reservation</option>
+          </select>
+              
+              
+              
+              
+              
+              </label>
+            
+            
+            {/* <select value={type} onChange={(e) => setType(e.target.value)}>            
+            <option value="About Seat Reservation">About Seat Reservation</option>
+            <option value="About meals">About meals</option>
+            <option value="About Ticket Reservation">About Ticket Reservation</option>
+            <option value="About Medical">About Medical</option>
+            <option value="About Seat Reservation">About Seat Reservation</option>
+          </select> */}
+               
+            <br></br><br></br><br></br>
             <label
               for="description"
               style={{ float: "left", color: "black" }}
@@ -115,9 +125,9 @@ const AddComplain = () => {
             >
               Description
             </label>
-            <input
-              type="text-ariea"
-              placeholder="Enter the description Airport"
+            <textarea 
+              rows = "8" cols = "50"
+              placeholder="Type here your message"
               className="form-control"
               name="description"
               value={description}
@@ -140,6 +150,7 @@ const AddComplain = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              pattern="[0-9a-zA-Z%&$@.]+@[a-zA-Z]+\.+[a-zA-Z]{2,3}"
             />
             <br></br>
           </div>
@@ -163,9 +174,16 @@ const AddComplain = () => {
           </div>
         </form>
         <br />
+        <a href="/AddComplain">
+          <button type="submit" className="btn btn-secondary">
+            <i class="fa fa-refresh" aria-hidden="true"></i>Refresh
+          </button> 
+          </a>
+          <br />
+        <br />
         <a href="/">
-          <button type="submit" className="btn btn-success">
-            <i class="fa fa-refresh" aria-hidden="true"></i> Refresh
+          <button type="submit" className="btn btn-warning">
+            <i class="fa fa-refresh" aria-hidden="true"></i> Back
           </button>
         </a>
         <br />

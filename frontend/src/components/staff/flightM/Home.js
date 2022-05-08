@@ -7,7 +7,7 @@ export default function Home(){
     <div>
        <div>
           <Link to = "/">
-             <button type="submit" className="btn btn-primary btn-success" style={{float:"right"}}><i class="fa fa-reply" aria-hidden="true"></i>Logout</button>
+             <button type="submit" className="btn btn-primary btn-info" variant="info" style={{float:"right"}}><i class="fa fa-reply" aria-hidden="true"></i>Logout</button>
             </Link>
           </div>
         <div>

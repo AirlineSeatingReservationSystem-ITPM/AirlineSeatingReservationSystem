@@ -18,9 +18,11 @@ import UserList from "./components/staff/userM/List";
 import Footer from "./components/staff/Footer";
 import MainHeader from "./components/screens/mainHeader";
 import UserReportGenerator from "./components/staff/userM/Users";
-
+import AboutUs from "./components/screens/AboutUs";
 //add complain-chandima
 import AddComplain from "./components/screens/AddComplain";
+//add medicare-chandima
+import MediCare from "./components/screens/MediCare";
 
 import AddMeal from "./components/staff/userM/AddMeal";
 // import ListMeal from "./components/staff/userM/ListMeal";
@@ -150,11 +152,31 @@ function App() {
             path="/editUser/:id"
             element={[<MainHeader />, <EditUser />]}
           />
+
           {/* chandima-add complain*/}
           <Route
             path="/AddComplain"
             element={[<MainHeader />, <AddComplain />]}
           />
+
+
+          <Route
+            path="/AboutUs"
+            element={[<MainHeader />, <AboutUs />]}
+          />
+
+           {/* chandima-add complain*/}
+           <Route
+            path="/AddComplain"
+            element={[<MainHeader />, <AddComplain />]}
+          />
+          {/* chandima-add medicare page*/}
+          <Route
+            path="/MediCare"
+            element={[<MainHeader />, <MediCare />]}
+          />
+
+
           {/* kasun Payment */}
           <Route
             path="/CreditCardDetails"
