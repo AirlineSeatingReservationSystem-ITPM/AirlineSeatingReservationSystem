@@ -48,6 +48,7 @@ import TravelInsuvarance from "./components/screens/TravelInsuvarance";
 import HomeSc from "./components/screens/HomeSc";
 import UpdateCard from "./components/screens/UpdateCard"
 import InsuranceFull from "./components/screens/InsuranceFull";
+import Paymentdone from "./components/screens/Paymentdone";
 
 
  import NavBar from "./components/NavBar";
@@ -126,8 +127,9 @@ function App() {
           <Route path="/RefundRequestsview" element={[<PaymentHeader />,<RefundRequestsview />]} />
           <Route path="/TravelInsuvarance" element={[<MainHeader />,<TravelInsuvarance />]} />
           <Route path="/HomeSc" element={[<MainHeader />,<HomeSc />]} />
-          <Route path="/UpdateCard" element={[<MainHeader />,<UpdateCard />]} />
+          <Route path="/UpdateCard/:id" element={[<MainHeader />,<UpdateCard />]} />
           <Route path="/InsuranceFull" element={[<MainHeader />,<InsuranceFull />]} />
+          <Route path="/Paymentdone" element={<Paymentdone />} />
           
 
           <Route
