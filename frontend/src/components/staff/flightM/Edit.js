@@ -325,7 +325,7 @@ const Edit = () => {
           <Link to="/edit-flightM">
             <button
               type="submit"
-              className="btn btn-primary btn-success"
+              className="btn btn-primary btn-primary"
               style={{ float: "right" }}
             >
               <i class="fa fa-reply" aria-hidden="true"></i>Back

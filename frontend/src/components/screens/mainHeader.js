@@ -79,6 +79,11 @@ function MainHeader() {
                 <i class="fa fa-handshake-o" aria-hidden="true"></i>Help
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link " to="/MediCare">
+                <i class="fa fa-medkit" aria-hidden="true"></i>Health Care
+              </Link>
+            </li>
           </ul>
           <form className="d-flex">
             <input

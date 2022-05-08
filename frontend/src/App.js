@@ -21,6 +21,8 @@ import UserReportGenerator from "./components/staff/userM/Users";
 
 //add complain-chandima
 import AddComplain from "./components/screens/AddComplain";
+//add medicare-chandima
+import MediCare from "./components/screens/MediCare";
 
 import AddMeal from "./components/staff/userM/AddMeal";
 // import ListMeal from "./components/staff/userM/ListMeal";
@@ -145,6 +147,11 @@ function App() {
            <Route
             path="/AddComplain"
             element={[<MainHeader />, <AddComplain />]}
+          />
+          {/* chandima-add medicare page*/}
+          <Route
+            path="/MediCare"
+            element={[<MainHeader />, <MediCare />]}
           />
 
           {/* kasun Payment */}

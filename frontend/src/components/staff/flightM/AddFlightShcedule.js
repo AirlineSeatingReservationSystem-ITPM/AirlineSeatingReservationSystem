@@ -183,7 +183,7 @@ const AddFlightShcedule = () => {
               name="flight"
               value={flight}
               onChange={(e) => setFlight(e.target.value)}
-              required
+              required pattern = "[0-9A-Z]{5}"
             />
             <br></br>
             <label
@@ -225,7 +225,7 @@ const AddFlightShcedule = () => {
               style={{ float: "left", color: "black" }}
               className="form-label"
             >
-              sheduled departure time
+              Scheduled Departure Time
             </label>
             <input
               type="time"
@@ -360,7 +360,7 @@ const AddFlightShcedule = () => {
         </form>
         <br />
         <a href="/add-flightM">
-          <button type="submit" className="btn btn-success">
+          <button type="submit" className="btn btn-secondary">
             <i class="fa fa-refresh" aria-hidden="true"></i> Refresh
           </button>
         </a>

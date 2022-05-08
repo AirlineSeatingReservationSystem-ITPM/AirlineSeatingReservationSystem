@@ -67,11 +67,11 @@ const AddComplain = () => {
             <input
               type="text"
               className="form-control"
-              placeholder="Enter the ID"
+              placeholder="Enter the Passport Number"
               name="id"
               value={id}
               onChange={(e) => setId(e.target.value)}
-              required
+              required pattern = "[0-9]{10}"
             />
             <br></br>
             <label
@@ -174,9 +174,16 @@ const AddComplain = () => {
           </div>
         </form>
         <br />
+        <a href="/AddComplain">
+          <button type="submit" className="btn btn-secondary">
+            <i class="fa fa-refresh" aria-hidden="true"></i>Refresh
+          </button> 
+          </a>
+          <br />
+        <br />
         <a href="/">
-          <button type="submit" className="btn btn-success">
-            <i class="fa fa-refresh" aria-hidden="true"></i> Refresh
+          <button type="submit" className="btn btn-warning">
+            <i class="fa fa-refresh" aria-hidden="true"></i> Back
           </button>
         </a>
         <br />
