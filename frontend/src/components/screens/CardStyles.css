@@ -5,29 +5,27 @@
   color: #000000;
 }
 
-.headercard{
+.headercard {
   color: #000000;
   font-weight: bold;
 }
 
-.namecard{
+.namecard {
   color: #000000;
-  margin-left:-75%;
-  
+  margin-left: -75%;
 }
-.hodercard{
+.hodercard {
   color: #000000;
-  margin-left:-69%;
+  margin-left: -69%;
 }
-.expcard{
+.expcard {
   color: #000000;
-  margin-left:-40%;
+  margin-left: -40%;
 }
-.cvccard{
+.cvccard {
   color: #000000;
-  margin-left:-40%;
+  margin-left: -40%;
 }
-
 
 .App-payment {
   padding: 180px;

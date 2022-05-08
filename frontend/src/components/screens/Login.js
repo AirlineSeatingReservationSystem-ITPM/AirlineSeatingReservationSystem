@@ -127,20 +127,28 @@ const LoginScreens = () => {
             style={{ float: "left" }}
           >
             <b style={{ float: "left" }}> Forgot Password 🥺?</b>
-            
           </Link>
-        <br></br> <br></br>
+          <br></br> <br></br>
           <p className="text-center">
-          <Link to="/register" style={{ textDecoration: "none", float:"left"} }>
-            <h5>
-              <i class="fa fa-cogs" aria-hidden="true"></i> Create an Account
-            </h5>
-          </Link>
-        </p>
+            <Link
+              to="/register"
+              style={{ textDecoration: "none", float: "left" }}
+            >
+              <h5>
+                <i class="fa fa-cogs" aria-hidden="true"></i> Create an Account
+              </h5>
+            </Link>
+          </p>
         </form>
-       
       </div>
-      <br/><br/><br/><br/><br/><br/><br/><br/>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 };

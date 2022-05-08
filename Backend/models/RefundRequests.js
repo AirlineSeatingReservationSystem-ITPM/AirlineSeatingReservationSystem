@@ -28,7 +28,6 @@ const RefundRequestsSchema = new Schema({
     type: String,
     required: true,
   },
-
 });
 
 const RefundRequests = mongoose.model("refundRequests", RefundRequestsSchema);

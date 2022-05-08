@@ -1,4 +1,7 @@
-body {margin:0;height:950px;}
+body {
+  margin: 0;
+  height: 950px;
+}
 
 .icon-bar {
   position: fixed;
@@ -9,7 +12,6 @@ body {margin:0;height:950px;}
 }
 
 .icon-bar1 {
-
   position: fixed;
 
   top: 25%;
@@ -19,13 +21,9 @@ body {margin:0;height:950px;}
   -ms-transform: translateX(3650%);
 
   transform: translateX(3650%);
-
 }
 
-
-
 .icon-bar1 a {
-
   display: block;
 
   text-align: center;
@@ -37,7 +35,6 @@ body {margin:0;height:950px;}
   color: white;
 
   font-size: 20px;
-
 }
 
 .icon-barS {
@@ -56,7 +53,6 @@ body {margin:0;height:950px;}
   color: white;
   font-size: 20px;
 }
-
 
 .icon-barN1 {
   position: fixed;
@@ -82,7 +78,6 @@ body {margin:0;height:950px;}
   -webkit-transform: translateX(3230%);
   -ms-transform: translateX(3230%);
   transform: translateX(3230%);
-
 }
 
 .icon-barN2 a {
@@ -92,7 +87,6 @@ body {margin:0;height:950px;}
   transition: all 0.3s ease;
   color: white;
   font-size: 20px;
-
 }
 
 .icon-barR1 {
@@ -101,7 +95,6 @@ body {margin:0;height:950px;}
   -webit-transform: translateX(3600%);
   -ms-transform: translateX(3600%);
   transform: translateX(3600%);
-
 }
 
 .icon-barR1 a {
@@ -111,12 +104,11 @@ body {margin:0;height:950px;}
   transition: all 0.3s ease;
   color: white;
   font-size: 20px;
-
 }
 
-.icon-barR2{
+.icon-barR2 {
   position: fixed;
-  top:50%;
+  top: 50%;
   -webit-transform: translateX(3865%);
   -ms-transform: translateX(3865%);
   transform: translateX(3865%);
@@ -129,9 +121,7 @@ body {margin:0;height:950px;}
   transition: all 0.3s ease;
   color: white;
   font-size: 20px;
-
 }
-
 
 .icon-bar a {
   display: block;
@@ -147,12 +137,12 @@ body {margin:0;height:950px;}
 }
 
 .facebook {
-  background: #3B5998;
+  background: #3b5998;
   color: white;
 }
 
 .twitter {
-  background: #55ACEE;
+  background: #55acee;
   color: white;
 }
 

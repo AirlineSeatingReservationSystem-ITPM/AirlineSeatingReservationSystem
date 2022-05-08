@@ -98,11 +98,9 @@ export default class CreditCardDetails2 extends Component {
                     <h5>&nbsp;&nbsp;{Payment.expiry}</h5>
                   </td>
                   <td>
-                  <Link to="/Paymentdone">
-                  <button className="btn btn-primary">
-                        Select Card
-                      </button>
-                      </Link>
+                    <Link to="/Paymentdone">
+                      <button className="btn btn-primary">Select Card</button>
+                    </Link>
                   </td>
                 </tr>
               ))}
