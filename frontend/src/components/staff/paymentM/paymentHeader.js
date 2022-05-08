@@ -17,21 +17,12 @@ function Header(){
             </li>
             
             <li className="nav-item">
-              <Link className="nav-link " to = "/display-paymentM"><i class="fa fa-users" aria-hidden="true"></i> Display  Refunds</Link>
+              <Link className="nav-link " to = "/RefundRequestsview"><i class="fa fa-users" aria-hidden="true"></i> List Refunds</Link>
             </li>
-
-            <li className="nav-item">
-              <Link className="nav-link " to = "/add-paymentM"><i class="fa fa-users" aria-hidden="true"></i> Add Payment Details</Link>
-            </li>
-
-            <li className="nav-item">
-              <Link className="nav-link " to = "/add-paymentM"><i class="fa fa-users" aria-hidden="true"></i> Display Payment Details</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link " to = "/add-paymentM"><i class="fa fa-users" aria-hidden="true"></i> Edit Payment Details</Link>
-            </li>
-
             
+            <li className="nav-item">
+              <Link className="nav-link " to = "/Display"><i class="fa fa-users" aria-hidden="true"></i> Display Refunds</Link>
+            </li>
             
     
 

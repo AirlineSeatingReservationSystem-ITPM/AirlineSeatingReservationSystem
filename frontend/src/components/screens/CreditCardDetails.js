@@ -100,7 +100,7 @@ export default class CreditCardDetails extends Component {
                   <td>
                     <a
                       className="btn btn-warning"
-                      href={`/edit/${Payment._id}`}
+                      href={`/UpdateCard/${Payment._id}`}
                     >
                       <i className="fas fa-edit"></i>&nbsp;Update Card Details
                     </a>
