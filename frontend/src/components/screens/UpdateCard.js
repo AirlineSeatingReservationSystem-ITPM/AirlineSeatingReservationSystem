@@ -50,7 +50,7 @@ const Edit = () => {
     return (
         <div>
             
-                <div className="form-wrapper container" style={{width:"50%",backgroundColor:"#b3ffff"}}><br/><br/>
+                <div className="form-wrapper container" style={{width:"50%",backgroundColor:"#d7f29d"}}><br/><br/>
                 <h1>👉Need to Update ?🤔 </h1>
                 <Form onSubmit={onSubmit}>
                
@@ -60,7 +60,7 @@ const Edit = () => {
                     </Form.Group><br></br>
 
                     <Form.Group controlId="name">
-                    <Form.Label style={{float:"left",color:"black"}}>Name</Form.Label>
+                    <Form.Label style={{float:"left",color:"black"}}>Holder Name</Form.Label>
                     <Form.Control type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="✍🏻 Edit Name" required/>
                     </Form.Group><br></br>
 
@@ -70,8 +70,8 @@ const Edit = () => {
                     </Form.Group><br></br>
 
                     <Form.Group controlId="cvc">
-                    <Form.Label style={{float:"left",color:"black"}}>Cvc</Form.Label>
-                    <Form.Control type="text" value={cvc} onChange={(e) => setCvc(e.target.value)} placeholder="✍🏻 Edit Cvc" required/>
+                    <Form.Label style={{float:"left",color:"black"}}>CVC</Form.Label>
+                    <Form.Control type="text" value={cvc} onChange={(e) => setCvc(e.target.value)} placeholder="✍🏻 Edit CVC" required/>
                     </Form.Group><br></br>
 
                    
