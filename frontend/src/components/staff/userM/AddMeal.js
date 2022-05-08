@@ -230,19 +230,19 @@ const AddMealShcedule = () => {
         <br />
 
         <a href="/add-userM">
-          <button type="submit" className="btn btn-success">
+          <button type="submit" className="btn btn-danger">
             <i class="fa fa-refresh" aria-hidden="true"></i> Reset
           </button>
         </a>
 
-        <a href="/add">
+        {/* <a href="/add">
           <button type="submit" className="btn btn-success"></button>
-        </a>
-        <a href="/add">
+        </a> */}
+        {/* <a href="/add">
           <button type="submit" className="btn btn-warning">
             <i class="fa fa-refresh" aria-hidden="true"></i> Refresh
           </button>
-        </a>
+        </a> */}
         <br />
         <br />
       </div>
