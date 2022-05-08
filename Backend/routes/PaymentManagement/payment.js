@@ -55,24 +55,62 @@ router.get("/", (_req, res) => {
   });
 });
 
+
+//get 
+router.route("/get/:id").get(async (req , res)=>{  //search data
+  let paymentID = req.params.id; 
+
+  await Payment.findById(paymentID)
+  .then((payment)=>{
+      res.status(200).json(payment);
+
+  }).catch((err)=>{
+      console.log(err);
+      res.status(500).send({status : "Error with fetching data" , error : err.message});
+  });
+});
+
+
 //update
 
-router.put("/update/:id", (req, res) => {
-  Payment.findByIdAndUpdate(
-    req.params.id,
-    {
-      $set: req.body,
-    },
-    (err, post) => {
-      if (err) {
-        return res.status(400).json({ error: err });
-      }
+// router.put("/update/:id", (req, res) => {
+//   Payment.findByIdAndUpdate(
+//     req.params.id,
+//     {
+//       $set: req.body,
+//     },
+//     (err, post) => {
+//       if (err) {
+//         return res.status(400).json({ error: err });
+//       }
 
-      return res.status(200).json({
-        success: "Updated Succesfully",
-      });
-    }
-  );
+//       return res.status(200).json({
+//         success: "Updated Succesfully",
+//       });
+//     }
+//   );
+// });
+
+router.route("/update/:id").put(async (req, res) => {
+  //update data
+  let paymentID = req.params.id;
+  const number = req.body.number;
+  const name = req.body.name;
+  const expiry = req.body.expiry;
+  const cvc = req.body.cvc;
+
+  const updatePayment = { number, name, expiry, cvc};
+
+  await Payment.findByIdAndUpdate(paymentID, updatePayment)
+    .then(() => {
+      res.status(200).send({ status: "Payment Updated" });
+    })
+    .catch((err) => {
+      console.log(err);
+      res
+        .status(500)
+        .send({ status: "Error with updating data", error: err.message });
+    });
 });
 
 //delete
