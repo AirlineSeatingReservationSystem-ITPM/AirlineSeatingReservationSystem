@@ -7,7 +7,6 @@ import "../../PaymentManagement/CreditCard/Card.css";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
-
 export default class PaymentForm extends React.Component {
   constructor(props) {
     super(props);
@@ -73,12 +72,12 @@ export default class PaymentForm extends React.Component {
             <div className="cardContainer">
               <form onSubmit={this.handleSubmit}>
                 <div class="headercard">
-                <h3>🔴Please enter your card details below👇</h3>
+                  <h3>🔴Please enter your card details below👇</h3>
                 </div>
                 <div className="form-group">
-                <div class="namecard">
-                  <h6>Enter Card Number:</h6>
-                </div>
+                  <div class="namecard">
+                    <h6>Enter Card Number:</h6>
+                  </div>
                   <input
                     type="tel"
                     name="number"
@@ -93,9 +92,9 @@ export default class PaymentForm extends React.Component {
                 </div>
 
                 <div className="form-group">
-                <div className="hodercard">
-                  <h6>Enter Card Holder Name:</h6>
-                </div>
+                  <div className="hodercard">
+                    <h6>Enter Card Holder Name:</h6>
+                  </div>
                   <input
                     type="text"
                     name="name"
@@ -109,9 +108,9 @@ export default class PaymentForm extends React.Component {
 
                 <div className="row">
                   <div className="col-6">
-                  <div className="expcard">
-                    <h6>Enter Expiration Date:</h6>
-                  </div>
+                    <div className="expcard">
+                      <h6>Enter Expiration Date:</h6>
+                    </div>
                     <input
                       type="tel"
                       name="expiry"
@@ -126,9 +125,9 @@ export default class PaymentForm extends React.Component {
                   </div>
 
                   <div className="col-6">
-                  <div className="cvccard">
-                    <h6>Enter CVC Number:</h6>
-                  </div>
+                    <div className="cvccard">
+                      <h6>Enter CVC Number:</h6>
+                    </div>
                     <input
                       type="tel"
                       name="cvc"
@@ -146,18 +145,12 @@ export default class PaymentForm extends React.Component {
                 <div className="form-actions">
                   <div className="button1">
                     <button className="btn btn-primary btn-lg col-sm-4">
-                     Pay
+                      Pay
                     </button>
-                   
-                    
-                    </div>
-                 
-                    
-                  
+                  </div>
                 </div>
               </form>
             </div>
-          
           </div>
         </div>
       </div>

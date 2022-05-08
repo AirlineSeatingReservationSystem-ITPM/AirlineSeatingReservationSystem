@@ -61,7 +61,6 @@ app.use("/meals", MealRouter);
 const flightRouter = require("./routes/flight.js");
 app.use("/flights", flightRouter);
 
-
 // RefundRequest
 const refundRequestsRouter = require("../Backend/routes/PaymentManagement/refundRequests");
 app.use("/RefundRequests", refundRequestsRouter);

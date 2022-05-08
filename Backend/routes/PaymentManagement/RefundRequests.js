@@ -10,7 +10,7 @@ router.route("/add").post((req, res) => {
   const reference = req.body.reference;
   const email = req.body.email;
   const phone = req.body.phone;
-  const description= req.body.description;
+  const description = req.body.description;
 
   const newRefundRequestsData = {
     name,
@@ -44,46 +44,50 @@ router.route("/add").post((req, res) => {
 //       });
 //     });
 //   });
-router.route("/").get((req , res)=>{ //route for display all
-    
-  RefundRequests.find().then((refundRequests)=>{
-      res.json(refundRequests);
-  }).catch((err)=>{
-      console.log(err);
-  });
+router.route("/").get((req, res) => {
+  //route for display all
 
+  RefundRequests.find()
+    .then((refundRequests) => {
+      res.json(refundRequests);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 });
 
-  //delete
+//delete
 
 router.delete("/delete/:id", (req, res) => {
-    RefundRequests.findByIdAndRemove(req.params.id).exec((err, deletedRefundRequests) => {
+  RefundRequests.findByIdAndRemove(req.params.id).exec(
+    (err, deletedRefundRequests) => {
       if (err)
         return res.status(400).json({
           message: "Delete unsuccesful",
           err,
         });
-  
+
       return res.json({
         message: "Delete successfull",
         deletedRefundRequests,
       });
+    }
+  );
+});
+
+router.get("/RefundRequests/:id", (req, res) => {
+  let RefundRequestsId = req.params.id;
+
+  RefundRequests.findById(RefundRequestsId, (err, RefundRequests) => {
+    if (err) {
+      return res.status(400).json({ success: false, err });
+    }
+
+    return res.status(200).json({
+      success: true,
+      RefundRequests,
     });
   });
-  
-  router.get("/RefundRequests/:id", (req, res) => {
-    let RefundRequestsId = req.params.id;
-  
-    RefundRequests.findById(RefundRequestsId, (err, RefundRequests) => {
-      if (err) {
-        return res.status(400).json({ success: false, err });
-      }
-  
-      return res.status(200).json({
-        success: true,
-        RefundRequests,
-      });
-    });
-  });
-  
-  module.exports = router;
+});
+
+module.exports = router;
