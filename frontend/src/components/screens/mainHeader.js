@@ -58,7 +58,7 @@ function MainHeader() {
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link " to="#">
+              <Link className="nav-link " to="/AboutUs">
                 <i class="fa fa-users" aria-hidden="true"></i>About Us
               </Link>
             </li>

@@ -18,7 +18,7 @@ import UserList from "./components/staff/userM/List";
 import Footer from "./components/staff/Footer";
 import MainHeader from "./components/screens/mainHeader";
 import UserReportGenerator from "./components/staff/userM/Users";
-
+import AboutUs from "./components/screens/AboutUs";
 //add complain-chandima
 import AddComplain from "./components/screens/AddComplain";
 
@@ -128,6 +128,11 @@ function App() {
           <Route
             path="/editUser/:id"
             element={[<MainHeader />, <EditUser />]}
+          />
+
+          <Route
+            path="/AboutUs"
+            element={[<MainHeader />, <AboutUs />]}
           />
 
            {/* chandima-add complain*/}
