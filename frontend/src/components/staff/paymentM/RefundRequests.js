@@ -1,4 +1,4 @@
-//flighs report
+//Refund Request report
 import React, { Component } from "react";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -9,11 +9,11 @@ import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core//Paper";
 import axios from "axios";
 import jsPDF from "jspdf";
-// import "./Reply.css";
+
 import html2canvas from "html2canvas";
 import { Link } from "react-router-dom";
 
-export default class Flights extends Component {
+export default class RefundRequests extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,7 +29,7 @@ export default class Flights extends Component {
       doc.setFontSize(28);
       doc.setTextColor(0, 0, 255);
       doc.setFontSize(16);
-      doc.text(10, 70, "Flight Scheduling Management");
+      doc.text(10, 70, "Payment Management");
       doc.setTextColor(0, 255, 0);
       doc.setFontSize(12);
       doc.text(145, 85, "Signature :");
@@ -80,7 +80,7 @@ export default class Flights extends Component {
       const date = Date().split(" ");
       // we use a date string to generate our filename.
       const dateStr =
-        "FlightSchedulingManagement_" +
+        "PaymentManagement_" +
         date[0] +
         date[1] +
         date[2] +
@@ -90,8 +90,10 @@ export default class Flights extends Component {
     });
   }
 
+
+
   componentDidMount() {
-    axios.get("http://localhost:8085/flights").then((response) => {
+    axios.get("http://localhost:8085/RefundRequests").then((response) => {
       console.log(response?.data);
       this.setState({
         ReportData: response?.data,
@@ -99,36 +101,32 @@ export default class Flights extends Component {
     });
   }
   render() {
-    console.log(this.state?.FlightData);
+    console.log(this.state?.RefundRequestData);
     return (
       <div>
         <TableContainer id="pdfdiv" className="txt" component={Paper}>
           <Table stickyHeader aria-label="sticky table">
             <TableHead>
               <TableRow>
-                <TableCell align="right">ID</TableCell>
-                <TableCell align="right">Flight</TableCell>
-                <TableCell align="right">Date</TableCell>
-                <TableCell align="right">Departure Time</TableCell>
-                <TableCell align="right">Assign Planetype</TableCell>
-                <TableCell align="right">Capacity</TableCell>
-                <TableCell align="right">Seats Reserved</TableCell>
-                <TableCell align="right">Available Classes</TableCell>
+                <TableCell align="right">Name</TableCell>
+                <TableCell align="right">Passport</TableCell>
+                <TableCell align="right">Reference</TableCell>
+                <TableCell align="right">Description</TableCell>
+                <TableCell align="right">Phone</TableCell>
+                <TableCell align="right">Email</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {this.state?.ReportData?.map((p, index) => {
                 return (
                   <TableRow key={index}>
-                    <TableCell align="right">{p.id}</TableCell>
-                    <TableCell align="right">{p.flight}</TableCell>
-                    <TableCell align="right">{p.date}</TableCell>
+                    <TableCell align="right">{p.name}</TableCell>
+                    <TableCell align="right">{p.passport}</TableCell>
+                    <TableCell align="right">{p.reference}</TableCell>
                      
-                    <TableCell align="right">{p.sheduleddeparturetime}</TableCell>
-                    <TableCell align="right">{p.assignplanetype}</TableCell>
-                    <TableCell align="right">{p.capacity}</TableCell>
-                    <TableCell align="right">{p.seatsreserved}</TableCell>
-                    <TableCell align="right">{p.availableclasses}</TableCell>
+                    <TableCell align="right">{p.description}</TableCell>
+                    <TableCell align="right">{p.phone}</TableCell>
+                    <TableCell align="right">{p.email}</TableCell>
                   </TableRow>
                 );
               })}
@@ -149,11 +147,11 @@ export default class Flights extends Component {
             </button>
             <br />
 
-            <Link to={`/staff-flightM-Home`}>
+            <Link to={`/staff-paymentM-Home`}>
               <button
                 variant="contained"
                 color="primary"
-                style={{ float: "right", background: "#00ffcc" }}
+                style={{ float: "right", background: "lightgreen" }}
               >
                 <i class="fa fa-reply" aria-hidden="true"></i> Go Back
               </button>
@@ -168,11 +166,11 @@ export default class Flights extends Component {
         <br />
         <center>
           <br />
-          <span style={{ color: "#33ccff" }}>{"Copyright © "}</span>
+          <span style={{ color: "white" }}>{"Copyright © "}</span>
 
-          <span style={{ color: "#0000cc" }}>Sky Airways</span>
+          <span style={{ color: "lightcoral" }}>Sky Airways</span>
 
-          <span style={{ color: "#33ccff" }}>
+          <span style={{ color: "white" }}>
             {" " + new Date().getFullYear() + " . "}
           </span>
         </center>

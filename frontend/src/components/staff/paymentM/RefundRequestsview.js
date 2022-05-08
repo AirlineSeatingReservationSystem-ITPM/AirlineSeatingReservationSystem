@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
-import TableRow from './TableRow';
+import TableRow from './PayTableRow';
 import {Link} from "react-router-dom";
 
 
-export default class FlightList extends Component {
+export default class RefundRequestsview extends Component {
 
   constructor(props) {
     super(props)
@@ -14,8 +14,13 @@ export default class FlightList extends Component {
     };
   }
 
+  
+
+
+
+
   componentDidMount() {
-    axios.get('http://localhost:8085/flights')
+    axios.get('http://localhost:8085/RefundRequests/')
       .then(res => {
         this.setState({
           students: res.data
@@ -36,9 +41,9 @@ export default class FlightList extends Component {
   render() {
     return (
     <div>
-        <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        {/* <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
             <div className="container-fluid">
-            <a className="navbar-brand" href="#" style={{color:"red"}}><b>Flight Scheduling Management System</b></a>
+            <a className="navbar-brand" href="#" style={{color:"red"}}><b>Payment Management System</b></a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -54,8 +59,8 @@ export default class FlightList extends Component {
                     <Link className="nav-link active" to = "/display-flightM"><i class="fa fa-plane" aria-hidden="true"></i>Display Shcedule</Link>
                 </li>
                 <li className="nav-item">
-              <Link className="nav-link " to = "/complains-flightM"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>Display Complains</Link>
-            </li>
+                    <Link className="nav-link " to = "/display-flightM"><i class="fa fa-truck" aria-hidden="true"></i>Help</Link>
+                </li>
                 </ul>
                 <form className="d-flex">
                 <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" style={{width:"60%"}}/>
@@ -63,37 +68,44 @@ export default class FlightList extends Component {
                 </form>
             </div>
             </div>
-        </nav>
-        <Link to = "/generateflight-pdf">
+        </nav> */}
+        <Link to = "/generateRefund-pdf">
         <div>
               <button className="info__button" type="primary" style={{float:"right"}}><i class="fa fa-cogs" aria-hidden="true"></i> Generate Report</button> 
           </div>
         </Link>
         <div className="bg4"></div>
         <br/>
-        <h1 style={{fontcolor:"red"}}>✈️Sheduled List✈️</h1>
+
+
+
+
+        
+        <h1 style={{fontcolor:"red"}}>📝Refund List✏️</h1>
+        
+          
+            
+            
           <div className="table-wrapper container">
            
             <Table striped bordered hoverstyle={{background:"#171717" , padding:"10px 10px 10px 10px" , opacity:"0.9"}}>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Flight</th> 
-                        <th>Date</th>
-                        <th>Destination</th>
-                        <th>Departure time</th>
-                        <th>Planetype</th>
-                        <th>Capacity</th>
-                        <th>Seats reserved</th>
-                        <th>Available Classes</th>
+                        <th>Name</th>
+                        <th>Passport</th> 
+                        <th>Reference</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Description</th>
                     </tr>
                 </thead>
                 <tbody>
                     {this.DataTable()}
                 </tbody>
             </Table>
+            <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         </div>
-         
+          
     </div>
     );
   }

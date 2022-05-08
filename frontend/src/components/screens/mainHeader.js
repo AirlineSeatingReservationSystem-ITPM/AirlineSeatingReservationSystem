@@ -28,7 +28,7 @@ function MainHeader() {
               <Link
                 className="nav-link active"
                 aria-current="page"
-                to="/staff-userM"
+                to="/HomeSc"
               >
                 <i class="fa fa-fw fa-home"></i>Home
               </Link>
@@ -37,6 +37,12 @@ function MainHeader() {
             <li className="nav-item">
               <Link className="nav-link " to="#">
                 <i class="fa fa-list-alt" aria-hidden="true"></i>Bookings
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link " to="/SelectCredit">
+                <i class="fa fa-list-alt" aria-hidden="true"></i>Booking Payment
               </Link>
             </li>
 
@@ -56,6 +62,11 @@ function MainHeader() {
                 <i class="fa fa-plane" aria-hidden="true"></i>Refund Requests
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link " to="/TravelInsuvarance">
+                <i class="fa fa-plane" aria-hidden="true"></i>Travle Insuarance
+              </Link>
+            </li>
 
             <li className="nav-item">
               <Link className="nav-link " to="/AboutUs">
@@ -66,6 +77,11 @@ function MainHeader() {
             <li className="nav-item">
               <Link className="nav-link " to="/AddComplain">
                 <i class="fa fa-handshake-o" aria-hidden="true"></i>Help
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link " to="/MediCare">
+                <i class="fa fa-medkit" aria-hidden="true"></i>Health Care
               </Link>
             </li>
           </ul>

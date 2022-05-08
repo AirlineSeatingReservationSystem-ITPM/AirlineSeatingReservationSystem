@@ -21,13 +21,15 @@ import UserReportGenerator from "./components/staff/userM/Users";
 import AboutUs from "./components/screens/AboutUs";
 //add complain-chandima
 import AddComplain from "./components/screens/AddComplain";
+//add medicare-chandima
+import MediCare from "./components/screens/MediCare";
 
 import AddMeal from "./components/staff/userM/AddMeal";
 // import ListMeal from "./components/staff/userM/ListMeal";
 import DisplayMealsList from "./components/staff/userM/DisplayMealsList";
 import EditMealList from "./components/staff/userM/EditMealList";
 
-//kasun
+// IT20081720 - (kasun)
 
 import React from "react";
 // import CreditCardDetails from "./components/screens/CreditCard";
@@ -41,12 +43,21 @@ import SelectCredit from "./components/screens/SelectCredit";
 import CreditCard from "./components/screens/CreditCard";
 import CreditCardDetails2 from "./components/screens/CreditCardDetails2";
 import CreditCard2 from "./components/screens/CreditCard2"
+import RefundRequestsview from "./components/staff/paymentM/RefundRequestsview";
+import PaymentReportGenerator from "./components/staff/paymentM/RefundRequests";
+import Display from "./components/staff/paymentM/Display";
+import TravelInsuvarance from "./components/screens/TravelInsuvarance";
+import HomeSc from "./components/screens/HomeSc";
+import UpdateCard from "./components/screens/UpdateCard"
+import InsuranceFull from "./components/screens/InsuranceFull";
+import Paymentdone from "./components/screens/Paymentdone";
+
 
  import NavBar from "./components/NavBar";
 // import Footer2 from "./components/Footer2";
 // import CreditCardDetails from "./PaymentManagement/CreditCard/CreditCardDetails";
 // import SocialMedia from "./SocialMedia";
-import UpdateCard from "./PaymentManagement/CreditCard/UpdateCard";
+// import UpdateCard from "./PaymentManagement/CreditCard/UpdateCard";
 import PaymentManagement from "./components/staff/PaymentManagement";
 // import Login from "./PaymentManagement/CreditCard/Login";
 
@@ -69,7 +80,6 @@ import DisplayComplains from "./components/staff/flightM/DisplayComplains";
 import ListComplain from "./components/staff/flightM/ListComplain";
 import EditComplain from "./components/staff/flightM/EditComplain";
 import Reply from "./components/staff/flightM/Reply";
-import RefundRequest from "./components/screens/RefundRequests";
 
 
 
@@ -106,20 +116,23 @@ function App() {
             element={<ResetPasswordScreens />}
           />
           
-
+          //IT20081720 (Kasun)
           {/* <Route path="/card" element={[<NavBar />, <CreditCard />]} /> */}
           {/* <Route path="/CreditCardDetails" element={[<NavBar />,<CreditCardDetails />]} /> */}
           <Route path="/edit/:id" element={<UpdateCard />} />
-          <Route path="/Payment" element={<PaymentManagement />} />
-          <Route path="/CreditCardDetails" element={<CreditCardDetails />} />
-          <Route path="/SelectCredit" element={<SelectCredit />} />
-          <Route path="/CreditCard" element={<CreditCard />} />
-          <Route path="/CreditCardDetails2" element={<CreditCardDetails2 />} />
-          <Route path="/CreditCard2" element={<CreditCard2 />} />
-
-
-
-        
+          <Route path="/Payment" element={[<MainHeader />,<PaymentManagement />]} />
+          <Route path="/CreditCardDetails" element={[<MainHeader />,<CreditCardDetails />]} />
+          <Route path="/SelectCredit" element={[<MainHeader />,<SelectCredit />]} />
+          <Route path="/CreditCard" element={[<MainHeader />,<CreditCard />]} />
+          <Route path="/CreditCardDetails2" element={[<MainHeader />,<CreditCardDetails2 />]} />
+          <Route path="/CreditCard2" element={[<MainHeader />,<CreditCard2 />]} />
+          <Route path="/RefundRequestsview" element={[<PaymentHeader />,<RefundRequestsview />]} />
+          <Route path="/TravelInsuvarance" element={[<MainHeader />,<TravelInsuvarance />]} />
+          <Route path="/HomeSc" element={[<MainHeader />,<HomeSc />]} />
+          <Route path="/UpdateCard/:id" element={[<MainHeader />,<UpdateCard />]} />
+          <Route path="/InsuranceFull" element={[<MainHeader />,<InsuranceFull />]} />
+          <Route path="/Paymentdone" element={<Paymentdone />} />
+          
 
           <Route
             path="/displayUsers"
@@ -140,6 +153,11 @@ function App() {
             path="/AddComplain"
             element={[<MainHeader />, <AddComplain />]}
           />
+          {/* chandima-add medicare page*/}
+          <Route
+            path="/MediCare"
+            element={[<MainHeader />, <MediCare />]}
+          />
 
           {/* kasun Payment */}
           <Route
@@ -147,7 +165,7 @@ function App() {
             element={[<MainHeader />, <CreditCardDetails />]}
           />
           
-          <Route path="/RefundRequests" element={<RefundRequests />} />
+          <Route path="/RefundRequests" element={[<MainHeader />,<RefundRequests />]} />
 
           {/* User management */}
           <Route path="/staff-login" element={<StaffLogin />} />
@@ -381,7 +399,14 @@ function App() {
               </PrivatePaymentStaffRoute>
             }
           />  
-
+            <Route
+            path="/generateRefund-pdf"
+            element={
+              <PrivatePaymentStaffRoute>
+                <PaymentReportGenerator />
+              </PrivatePaymentStaffRoute>
+            }
+          />
 
 
             <Route
@@ -392,6 +417,17 @@ function App() {
               </PrivatePaymentStaffRoute>
             }
           />
+
+          <Route
+            path="/Display"
+            element={
+              <PrivatePaymentStaffRoute>
+                 <Display />
+              </PrivatePaymentStaffRoute>
+            }
+          />
+
+          
 
           {/* <Route path="/card" element={<CreditCard />} /> */}
         </Routes>
